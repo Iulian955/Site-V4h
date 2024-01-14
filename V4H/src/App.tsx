@@ -6,6 +6,9 @@ import { AuthProvider } from "./components/context/AuthProvider";
 import "./App.css";
 import { useScrollSense } from "./components/hooks/senseHook/useScrollSense";
 import Homepage from "../src/components/Homepage/Homepage";
+import Navbar from "../src/components/Navbar/Navbar";
+import Footer from "../src/components/Footer/Footer";
+import ServicesPage from "./components/ServicesPage/ServicesPage";
 
 function App() {
   useScrollSense(() => {
@@ -18,9 +21,12 @@ function App() {
       <header className="App-header">
         <BrowserRouter basename="/">
           <AuthProvider>
+            <Navbar />
             <Routes>
               <Route path="/" element={<Homepage />} />
+              <Route path="/services" element={<ServicesPage />} />
             </Routes>
+            <Footer />
           </AuthProvider>
         </BrowserRouter>
       </header>

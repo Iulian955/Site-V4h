@@ -11,6 +11,11 @@ $myColor: #f26622;
   margin: auto;
   height: 100%;
   position: relative;
+
+  @include media("<tablet") {
+  }
+  @include media(">=tablet", "<desktop") {
+  }
 }
 
 .firstContainer {
@@ -22,6 +27,12 @@ $myColor: #f26622;
   align-items: center;
   justify-content: center;
   padding: 0 15%;
+  @include media("<tablet") {
+    height: 500px;
+  }
+  @include media(">=tablet", "<desktop") {
+    height: 600px;
+  }
 }
 
 .mainText {
@@ -30,6 +41,12 @@ $myColor: #f26622;
   font-weight: 600;
   font-size: 60px;
   text-align: center;
+  @include media("<tablet") {
+    font-size: 30px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 50px;
+  }
 }
 
 .orange {
@@ -45,11 +62,21 @@ $myColor: #f26622;
   align-items: center;
   justify-content: space-around;
   padding: 0 5%;
+  @include media("<tablet") {
+  }
+  @include media(">=tablet", "<desktop") {
+  }
 
   img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+    @include media("<tablet") {
+      max-width: 15%;
+    }
+    @include media(">=tablet", "<desktop") {
+      max-width: 15%;
+    }
   }
 }
 
@@ -57,11 +84,18 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: white;
-  padding: 5rem 10rem;
+  padding: 3% 8%;
+  @include media("<tablet") {
+    padding-bottom: 2rem;
+  }
+  @include media(">=tablet", "<desktop") {
+    padding-bottom: 2rem;
+  }
 }
 
 .servicesBtn {
   button {
+    padding: 0.4rem;
     background: transparent;
     font-family: $myFont;
     font-size: 14px;
@@ -73,6 +107,13 @@ $myColor: #f26622;
     border: 2px solid transparent;
     display: inline-block;
     border-radius: 5px;
+    color: #494543;
+    @include media("<tablet") {
+      font-size: 10px;
+    }
+    @include media(">=tablet", "<desktop") {
+      font-size: 12px;
+    }
   }
 }
 
@@ -83,6 +124,14 @@ $myColor: #f26622;
   line-height: 62px;
   letter-spacing: 0em;
   padding: 3% 0;
+  padding-bottom: 0;
+
+  @include media("<tablet") {
+    font-size: 20px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 38px;
+  }
 }
 
 .subTitle {
@@ -91,19 +140,41 @@ $myColor: #f26622;
   font-weight: 500;
   line-height: 21px;
   letter-spacing: 0em;
+  padding: 2% 0;
+
+  @include media("<tablet") {
+    font-size: 12px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 14px;
+  }
 }
 
 .cardContainer {
+  padding: 3% 0;
 }
 
 .cards {
   display: flex;
   gap: 2rem;
+
+  @include media("<tablet") {
+    flex-direction: column;
+  }
+  @include media(">=tablet", "<desktop") {
+    flex-direction: column;
+  }
 }
 
 .cardX {
   background-color: #fbfafa;
   padding: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 4%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .headCard {
@@ -124,16 +195,28 @@ $myColor: #f26622;
     line-height: 31px;
     letter-spacing: 0em;
   }
+  @include media("<tablet") {
+    font-size: 18px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 20px;
+  }
 }
 
 .cardText {
   font-family: $myFont;
-  font-size: 16px;
+  font-size: min(1vw, 20px);
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
   color: #86827e;
+  @include media("<tablet") {
+    font-size: 14px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 16px;
+  }
 }
 
 .bold {
@@ -142,8 +225,9 @@ $myColor: #f26622;
 }
 
 .cardLink {
+  padding-top: 30%;
   a {
-    text-decoration: none;
+    text-decoration: underline;
     font-family: $myFont;
     font-size: 16px;
     font-weight: 600;
@@ -151,4 +235,278 @@ $myColor: #f26622;
     letter-spacing: 0em;
     color: #494543;
   }
+}
+
+.thirdContainer {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  padding: 3% 8%;
+  @include media("<tablet") {
+    padding-bottom: 1rem;
+  }
+  @include media(">=tablet", "<desktop") {
+    padding-bottom: 2rem;
+  }
+}
+
+.thirdWrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  @include media("<tablet") {
+    grid-template-columns: 1fr;
+  }
+  @include media(">=tablet", "<desktop") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.firstSectionTitle {
+  font-family: $myFont;
+  font-size: min(3vw, 40px);
+  font-weight: 600;
+  line-height: 62px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #494543;
+  @include media("<tablet") {
+    font-size: 20px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 16px;
+  }
+}
+
+.firstSectionText {
+  font-family: $myFont;
+  font-size: min(1vw, 16px);
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #86827e;
+  @include media("<tablet") {
+    font-size: 12px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 14px;
+  }
+}
+
+.cardsFAQ {
+  padding: 10% 0;
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @include media("<tablet") {
+    grid-template-columns: 100%;
+    gap: 0;
+  }
+  @include media(">=tablet", "<desktop") {
+    grid-template-columns: 100%;
+    gap: 0;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 82px;
+}
+
+.sectionBtn {
+  button {
+    border: none;
+    font-family: $myFont;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #f26622;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.firstSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.forthWrapper {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 3% 8%;
+  @include media("<tablet") {
+    padding-bottom: 2rem;
+  }
+  @include media(">=tablet", "<desktop") {
+    padding-bottom: 3rem;
+  }
+}
+
+.stepsContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #eeedec;
+}
+
+.stepBtn {
+  button {
+    width: 8rem;
+    height: 4rem;
+    background-color: #f26622;
+    color: white;
+    font-family: $myFont;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 16px;
+    @include media("<tablet") {
+      width: 4rem;
+      height: 2rem;
+      font-size: 12px;
+      padding: 6px;
+    }
+    @include media(">=tablet", "<desktop") {
+      width: 6rem;
+      height: 3rem;
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+}
+
+.stepTitle {
+  font-family: $myFont;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #494543;
+  @include media("<tablet") {
+    font-size: 18px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 20px;
+  }
+}
+
+.stepSubTitle {
+  font-family: $myFont;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #86827e;
+  @include media("<tablet") {
+    font-size: 12px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 14px;
+  }
+}
+
+.stepsWrapper {
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+  @include media("<tablet") {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  @include media(">=tablet", "<desktop") {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.stepTexts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bigText {
+  color: #f26622;
+  font-family: $myFont;
+  font-size: min(3vw, 40px);
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  @include media("<tablet") {
+    font-size: 24px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 28px;
+  }
+}
+
+.fifthContainer {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  padding: 7% 8%;
+}
+
+.fifthWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  @include media("<tablet") {
+    grid-template-columns: 1fr;
+  }
+  @include media(">=tablet", "<desktop") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.subscribeTitle {
+  font-family: $myFont;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #494543;
+  @include media("<tablet") {
+    font-size: 18px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 20px;
+  }
+}
+.subscribeInput {
+  input {
+    width: 100%;
+    border: 2px solid #cdc9c7;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+  }
+}
+.subscribeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
