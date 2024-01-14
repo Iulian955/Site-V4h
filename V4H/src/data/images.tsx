@@ -14,7 +14,9 @@ const images = {
     plus: require("./../media/assets/pics/homepage/plus.svg").default,
     street: require("./../media/assets/pics/homepage/street.svg").default,
     it: require("./../media/assets/pics/homepage/it.svg").default,
-    digital: require("./../media/assets/pics/homepage/digital.svg").default
+    digital: require("./../media/assets/pics/homepage/digital.svg").default,
+    logoColor: require("./../media/assets/pics/homepage/logoColor.svg").default,
+    logoAlb: require("./../media/assets/pics/homepage/logo_alb 1.svg").default
   }
 };
 
