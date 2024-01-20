@@ -14,13 +14,13 @@ const Homepage = () => {
           solutions
         </div>
       </div>
-      <div className={styles.logosContainer}>
+      {/* <div className={styles.logosContainer}>
         <img src={images.homepage.accenture} alt="accenture" />
         <img src={images.homepage.zara} alt="zara" />
         <img src={images.homepage.thales} alt="thales" />
         <img src={images.homepage.dell} alt="dell" />
         <img src={images.homepage.luxoft} alt="luxoft" />
-      </div>
+      </div> */}
       <div className={styles.secondContainer}>
         <div className={styles.servicesBtn}>
           <button>SERVICES</button>

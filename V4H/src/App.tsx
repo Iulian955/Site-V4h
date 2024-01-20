@@ -9,6 +9,8 @@ import Homepage from "../src/components/Homepage/Homepage";
 import Navbar from "../src/components/Navbar/Navbar";
 import Footer from "../src/components/Footer/Footer";
 import ServicesPage from "./components/ServicesPage/ServicesPage";
+import Advertising from "./components/Advertising/Advertising";
+import Marketing from "./components/Marketing/Marketing";
 
 function App() {
   useScrollSense(() => {
@@ -25,6 +27,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/advertising" element={<Advertising />} />
+              <Route path="/marketing" element={<Marketing />} />
             </Routes>
             <Footer />
           </AuthProvider>
