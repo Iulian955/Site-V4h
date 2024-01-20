@@ -3,21 +3,26 @@ import styles from "../Navbar/Navbar.module.scss";
 import images from "../../data/images";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdown, setIsDropdown] = useState(false);
-  const [infiintareDropdown, setInfiintareDropdown] = useState(false);
-  const [pfaDropdown, setPfaDropdown] = useState(false);
-  const [srlDropdown, setSrlDropdown] = useState(false);
-  const [acteDropdown, setActeDropdown] = useState(false);
 
   const handleOnClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const location = useLocation();
+  const { pathname } = useLocation();
+
   return (
-    <div className={styles.header}>
+    <div
+      className={
+        location.pathname === "/advertising" || location.pathname === "/marketing"
+          ? styles.advertisingHeader
+          : styles.header
+      }
+    >
       <div className={styles.headerContainer}>
         <HashLink className={styles.logoDiv} to="/">
           <img src={images.homepage.logoAlb} alt="/" />

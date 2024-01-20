@@ -1,3 +1,5 @@
+import Advertising from "../components/Advertising/Advertising";
+
 const images = {
   homepage: {
     bg1: require("./../media/assets/pics/homepage/bg1.svg").default,
@@ -17,6 +19,29 @@ const images = {
     digital: require("./../media/assets/pics/homepage/digital.svg").default,
     logoColor: require("./../media/assets/pics/homepage/logoColor.svg").default,
     logoAlb: require("./../media/assets/pics/homepage/logo_alb 1.svg").default
+  },
+
+  advertising: {
+    bg1: require("./../media/assets/pics/advertising/bg1.svg").default,
+    eye: require("./../media/assets/pics/advertising/eye.svg").default,
+    data: require("./../media/assets/pics/advertising/data.svg").default,
+    location: require("./../media/assets/pics/advertising/location.svg").default,
+    search: require("./../media/assets/pics/advertising/search.svg").default,
+    map: require("./../media/assets/pics/advertising/map.jpg").default,
+    mail: require("./../media/assets/pics/advertising/mail.svg").default,
+    phone: require("./../media/assets/pics/advertising/phone.svg").default,
+    location2: require("./../media/assets/pics/advertising/location2.svg").default
+  },
+
+  marketing: {
+    creative: require("./../media/assets/pics/marketing/creative.svg").default,
+    diagram: require("./../media/assets/pics/marketing/diagram.svg").default,
+    target: require("./../media/assets/pics/marketing/target.svg").default,
+    transparent: require("./../media/assets/pics/marketing/transparent.svg").default,
+    marketing: require("./../media/assets/pics/marketing/marketing.jpg").default,
+    bullet: require("./../media/assets/pics/marketing/bullet.svg").default,
+    it: require("./../media/assets/pics/marketing/it.svg").default,
+    street: require("./../media/assets/pics/marketing/street.svg").default
   }
 };
 

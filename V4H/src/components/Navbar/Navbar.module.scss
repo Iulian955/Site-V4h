@@ -28,6 +28,22 @@ $myColor: #f26622;
   }
 }
 
+.advertisingHeader {
+  width: 100%;
+  max-width: 100rem;
+  height: 90px;
+  margin: auto;
+  background: #0d0d0c;
+  padding: 0 5%;
+  z-index: 999;
+  @include media("<tablet") {
+    background: rgba(0, 0, 0, 1);
+  }
+  @include media(">=tablet", "<desktop") {
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
 .logoDiv {
   width: 40%;
   height: 40%;
@@ -49,6 +65,14 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  @include media("<tablet") {
+    width: 50%;
+    height: 50%;
+  }
+  @include media(">=tablet", "<desktop") {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 nav {
@@ -126,7 +150,7 @@ nav a {
   color: white;
   user-select: none;
   font-family: $myFont;
-  font-size: 14px;
+  font-size: min(1.2vw, 14px);
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0.20000000298023224px;
