@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { uniqueId } from "lodash";
 import ReactGA from "react-ga4";
 import styles from "./Accordion.module.scss";
@@ -7,16 +7,21 @@ import { FaHandshakeAngle } from "react-icons/fa6";
 
 interface cardBoardProps {
   theQuestion: QuestionData;
+  onClick: () => void;
 }
 interface QuestionData {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
-const Accordion = ({ theQuestion }: cardBoardProps) => {
+const Accordion = ({ theQuestion, onClick }: cardBoardProps) => {
   const [cardboardOpen, setCardOn] = useState<boolean>(false);
+  useEffect(() => {
+    setCardOn(false);
+  }, []);
   const clickHandler = () => {
     setCardOn(!cardboardOpen);
     ReactGA.event(`user_FAQ_clickedQuestion_${theQuestion.question.substring(0, 16)}`);
+    onClick();
   };
 
   return (
@@ -34,7 +39,7 @@ const Accordion = ({ theQuestion }: cardBoardProps) => {
         </div>
       </div>
       <div className={styles.answerArea}>
-        <p className={cardboardOpen ? styles.activePop : styles.inactivePop}>{theQuestion.answer}</p>
+        <div className={cardboardOpen ? styles.activePop : styles.inactivePop}>{theQuestion.answer}</div>
       </div>
     </div>
   );

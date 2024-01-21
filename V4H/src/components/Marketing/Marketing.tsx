@@ -9,14 +9,8 @@ const Marketing = () => {
   const [selectedCity, setSelectedCity] = useState("Google Ads Marketing");
 
   let contentDiv;
-  let contentDiv1;
-  let contentDiv2;
 
   const handleCityClick = (city) => {
-    setSelectedCity(city);
-  };
-
-  const handleCityChange = (city) => {
     setSelectedCity(city);
   };
 
