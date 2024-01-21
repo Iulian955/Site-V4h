@@ -42,6 +42,13 @@ const images = {
     bullet: require("./../media/assets/pics/marketing/bullet.svg").default,
     it: require("./../media/assets/pics/marketing/it.svg").default,
     street: require("./../media/assets/pics/marketing/street.svg").default
+  },
+  services: {
+    services: require("./../media/assets/pics/servicesPage/services.jpg").default,
+    time: require("./../media/assets/pics/servicesPage/time.svg").default,
+    quality: require("./../media/assets/pics/servicesPage/quality.svg").default,
+    mind: require("./../media/assets/pics/servicesPage/mind.svg").default,
+    comunication: require("./../media/assets/pics/servicesPage/comunication.svg").default
   }
 };
 

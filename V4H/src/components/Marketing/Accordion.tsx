@@ -16,7 +16,7 @@ interface QuestionData {
 const Accordion = ({ theQuestion, onClick }: cardBoardProps) => {
   const [cardboardOpen, setCardOn] = useState<boolean>(false);
   useEffect(() => {
-    setCardOn(false); // Reset state when the question changes
+    setCardOn(false);
   }, [theQuestion.question]);
   const clickHandler = () => {
     onClick();
