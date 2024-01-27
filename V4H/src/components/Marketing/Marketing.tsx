@@ -10,6 +10,78 @@ const Marketing = () => {
 
   let contentDiv;
 
+  let contentDiv1 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.servicesMainTitle}> Google Ads Marketing</div>
+      <div className={styles.servicesSmallText}>
+        Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
+        Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
+        deliver tangible results.
+        <br />
+        <br />
+        Benefits :
+      </div>
+      <ul>
+        <li>Granular Targeting</li>
+        <li>Strategic Keyword Optimization</li>
+        <li>Ad Extensions Mastery</li>
+        <li>Continuous Performance Analysis</li>
+        <li>Responsive and Dynamic Ads</li>
+        <li>Conversion Tracking Expertise</li>
+        <li>Competitive Analysis</li>
+        <li>Adaptive Budget Management</li>
+      </ul>
+    </div>
+  );
+
+  let contentDiv2 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.servicesMainTitle}> Social Media Advertising</div>
+      <div className={styles.servicesSmallText}>
+        Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
+        Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
+        deliver tangible results.
+        <br />
+        <br />
+        Benefits :
+      </div>
+      <ul>
+        <li>Granular Targeting</li>
+        <li>Strategic Keyword Optimization</li>
+        <li>Ad Extensions Mastery</li>
+        <li>Continuous Performance Analysis</li>
+        <li>Responsive and Dynamic Ads</li>
+        <li>Conversion Tracking Expertise</li>
+        <li>Competitive Analysis</li>
+        <li>Adaptive Budget Management</li>
+      </ul>
+    </div>
+  );
+
+  let contentDiv3 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.servicesMainTitle}> SEO</div>
+      <div className={styles.servicesSmallText}>
+        Unlocking the full potential of your online presence through meticulous SEO monitoring, analysis, and audit. Our
+        comprehensive approach ensures your website is primed for maximum visibility and success in search engine
+        rankings. Benefits:
+        <br />
+        <br />
+        Benefits :
+      </div>
+      <ul>
+        <li>Thorough SEO Monitoring</li>
+        <li>Data-Driven Analysis</li>
+        <li>Comprehensive SEO Audit</li>
+        <li>Strategic Keyword Optimization</li>
+        <li>Competitor Benchmarking</li>
+        <li>Proactive Issue Resolution</li>
+        <li>Transparent Reporting</li>
+        <li>Cutting-Edge Tool Integration</li>
+      </ul>
+    </div>
+  );
+
   const handleCityClick = (city) => {
     setSelectedCity(city);
   };
@@ -155,21 +227,9 @@ const Marketing = () => {
           <div className={styles.judeteResponsive}>
             <div className={styles.cardsFAQ}>
               <div className={styles.cardsWrapper}>
-                <Accordion
-                  key={uniqueId()}
-                  theQuestion={{ question: "Google Ads Marketing", answer: contentDiv }}
-                  onClick={() => handleCityClick("Google Ads Marketing")}
-                />
-                <Accordion
-                  key={uniqueId()}
-                  theQuestion={{ question: "Social Media Marketing", answer: contentDiv }}
-                  onClick={() => handleCityClick("Social Media Marketing")}
-                />
-                <Accordion
-                  key={uniqueId()}
-                  theQuestion={{ question: "SEO", answer: contentDiv }}
-                  onClick={() => handleCityClick("SEO")}
-                />
+                <Accordion key={uniqueId()} theQuestion={{ question: "Google Ads Marketing", answer: contentDiv1 }} />
+                <Accordion key={uniqueId()} theQuestion={{ question: "Social Media Marketing", answer: contentDiv2 }} />
+                <Accordion key={uniqueId()} theQuestion={{ question: "SEO", answer: contentDiv3 }} />
               </div>
             </div>
           </div>
@@ -244,7 +304,6 @@ const Marketing = () => {
               <div className={styles.stepBtn}>
                 <button>Step 1</button>
               </div>
-
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Consultation</div>
                 <div className={styles.stepSubTitle}>
@@ -252,12 +311,11 @@ const Marketing = () => {
                 </div>
               </div>
             </div>
-
+            <div className={styles.interLine}></div>
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
                 <button>Step 2</button>
               </div>
-
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Analysis and planning</div>
                 <div className={styles.stepSubTitle}>
@@ -266,7 +324,7 @@ const Marketing = () => {
                 </div>
               </div>
             </div>
-
+            <div className={styles.interLine}></div>
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
                 <button>Step 3</button>

@@ -13,7 +13,97 @@ const ServicesPage = () => {
 
   let contentDiv;
 
-  const handleServiceClick = (service) => {
+  let contentDiv1 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.svsMainTitle}>Web development services</div>
+      <div className={styles.svsSmallText}>
+        If we are talking about websites most of the time, we develop in REACT. If you prefer another framework we can
+        adapt, our specialists have enough experience to provide services on any kind of front end or back-end
+        frameworks. <br /> <br />
+        If we are talking about other web application, we can build you any of the following: CRM, ERP, SaaS, Analytics
+        Tool, Internal Dashboards. These are just some examples of what we can do.
+        <br /> <br /> Here are the benefits of working with us on a web application
+      </div>
+      <ul>
+        <li>More cashflow for your business</li>
+        <li>Time saved for your priorities</li>
+        <li>Solutions Aligned with Your Vision`</li>
+        <li>Exceptional Experience for Your Visitors</li>
+        <li>Become Unique in your industry</li>
+        <li>Cost effective solutions for your budget</li>
+        <li>Flexibility for future growth</li>
+        <li>Peace of mind</li>
+      </ul>
+    </div>
+  );
+
+  let contentDiv2 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.svsMainTitle}>Business digitization</div>
+      <div className={styles.svsSmallText}>
+        Our expertise lies in catalyzing the transformation of conventional businesses into digitally optimized
+        entities, leveraging a myriad of solutions. Whether you're transitioning to a digital framework or seeking to
+        enhance your existing digital infrastructure, our comprehensive suite of services ensures a seamless journey.
+        <br />
+        <br />
+        We specialize in:
+      </div>
+      <ul className={styles.flexUL}>
+        <li>Enterprise-wide digital strategy formulation</li>
+        <li>Implementing and integrating CRM (Customer Relationship Management) systems</li>
+        <li>Customized ERP (Enterprise Resource Planning) solutions tailored to your operations</li>
+        <li>Designing and deploying SaaS (Software as a Service) platforms</li>
+        <li>Developing Analytics Tools for data-driven insights</li>
+        <li>Creating Internal Dashboards for streamlined operations</li>
+      </ul>
+
+      <div className={styles.svsSmallText}>
+        {" "}
+        The advantages of partnering with us for your digital transformation journey encompass: <br />
+      </div>
+      <ul className={styles.flexUL}>
+        <li>Amplified cash flow through optimized digital operations</li>
+        <li>Time efficiencies aligned with your business priorities</li>
+        <li>Solutions crafted to resonate with your long-term vision and goals</li>
+        <li>Exceptional experiences for your customers and stakeholders</li>
+        <li>Establishing a unique digital footprint within your industry</li>
+        <li>Cost-effective digital strategies curated for your specific budget</li>
+        <li>Scalability and adaptability for sustained growth</li>
+        <li>A sense of confidence and assurance throughout the transformation process</li>
+      </ul>
+    </div>
+  );
+
+  let contentDiv3 = (
+    <div className={styles.servicesContent}>
+      <div className={styles.svsMainTitle}>Automation and testing services</div>
+      <div className={styles.svsSmallText}>
+        Within your business there are parts in systems that take up too many resources, maybe it’s time, maybe it’s
+        money, maybe it’s energy. <br />
+        By systems we mean both digital existing systems of your workflow or departments, maybe the sales department
+        takes too much time to find qualified leads, we can help with that, maybe your CRM has too many steps that need
+        to be manually taken, we can help with that too.
+        <br />
+        The point is within these services, we take a look at your business, se what can be automate, we test it, then
+        we automate it, without disrupting your workflow.
+        <br />
+        The benefits of working with us on testing and automation:
+        <br />
+      </div>
+      <ul>
+        <li>Reliable Product Quality</li>
+        <li>Faster Time-to-Market</li>
+        <li>Enhanced User Satisfaction</li>
+        <li>Consistent Performance</li>
+        <li>Reduced Errors and Risks</li>
+        <li>Greater Productivity</li>
+        <li>Cost-Efficient Solutions</li>
+        <li>Innovative, Reliable Products</li>
+      </ul>
+    </div>
+  );
+
+  const handleServiceClick = (service: string) => {
     setSelectedService(service);
   };
 
@@ -112,7 +202,9 @@ const ServicesPage = () => {
     <div className={styles.servicesContainer}>
       <div className={styles.servicesWrapper}>
         <div className={styles.servicesFirstSection}>
-          <div className={styles.servicesMainTitle}>Information and Technology</div>
+          <div className={styles.servicesMainTitle}>
+            Information <span className={styles.white}>and</span> Technology
+          </div>
           <div className={styles.servicesSubTitle}>
             We use the latest technology to grow your business, protect your data and make your information visible for
             your targeted audience
@@ -165,20 +257,15 @@ const ServicesPage = () => {
           <div className={styles.svsResponsive}>
             <div className={styles.cardsFAQ}>
               <div className={styles.cardsWrapper}>
+                <Accordion key={uniqueId()} theQuestion={{ question: "Web development", answer: contentDiv1 }} />
+
                 <Accordion
                   key={uniqueId()}
-                  theQuestion={{ question: "Web development", answer: contentDiv }}
-                  onClick={() => handleServiceClick("Web development")}
+                  theQuestion={{ question: "Digital transformation services", answer: contentDiv2 }}
                 />
                 <Accordion
                   key={uniqueId()}
-                  theQuestion={{ question: "Digital transformation services", answer: contentDiv }}
-                  onClick={() => handleServiceClick("Digital transformation services")}
-                />
-                <Accordion
-                  key={uniqueId()}
-                  theQuestion={{ question: "Automations and testing", answer: contentDiv }}
-                  onClick={() => handleServiceClick("Automations and testing")}
+                  theQuestion={{ question: "Automations and testing", answer: contentDiv3 }}
                 />
               </div>
             </div>
@@ -186,7 +273,10 @@ const ServicesPage = () => {
         </div>
 
         <div className={styles.servicesThirdSection}>
-          <div className={styles.svsBigTitle}>Our 4 Principals we care about most in digital marketing</div>
+          <div className={styles.svsBigTitle}>
+            Sustainable growth solutions means that we provide the most value with the least amount of recourses wasted
+          </div>
+          <div className={styles.svsSmallTitle}>What you can expect</div>
           <div className={styles.svsCards}>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
@@ -194,7 +284,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.cardTitle}>Business Mindset</div>
 
-              <div className={styles.cardText}>
+              <div className={styles.cardText2}>
                 We put ourselves in your shoes so we can come up with the best solutions based on your opportunities and
                 challenges
               </div>
@@ -205,7 +295,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.cardTitle}>On point communication</div>
 
-              <div className={styles.cardText}>
+              <div className={styles.cardText2}>
                 We won’t bother you more than we need to, we talk everything we need to at the beginning, then just
                 follow up if we need your approval for a decision, we prioritise your time
               </div>
@@ -217,7 +307,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.cardTitle}>Competitive quality</div>
 
-              <div className={styles.cardText}>
+              <div className={styles.cardText2}>
                 We always strive to deliver the best quality, we are not competitive with the marketing but with
                 ourselves, after all you are your best competitor.
               </div>
@@ -229,7 +319,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.cardTitle}>Time efficiency</div>
 
-              <div className={styles.cardText}>
+              <div className={styles.cardText2}>
                 When we tell you a date we respect it, no delays, no hiccups, only professionalism
               </div>
             </div>
@@ -257,6 +347,7 @@ const ServicesPage = () => {
                 </div>
               </div>
             </div>
+            <div className={styles.interLine}></div>
 
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
@@ -271,6 +362,7 @@ const ServicesPage = () => {
                 </div>
               </div>
             </div>
+            <div className={styles.interLine}></div>
 
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
@@ -356,13 +448,16 @@ const ServicesPage = () => {
               </div>
               <div className={styles.cardX}>
                 <div className={styles.headCard}>
-                  <img src={images.homepage.digital} alt="digital" />
-                  <div>Digital marketing</div>
+                  <img src={images.homepage.street} alt="digital" />
+                  <div>Street advertising</div>
                 </div>
                 <div className={styles.cardText}>
-                  We get to know your business, your audience, then we tailor a solution based on the opportunities you
-                  have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing,
-                  branding for our clients, but the question remains…
+                  What do you do while you are in traffic? Well... most people look around. The best marketing strategy
+                  will always be an omnichannel strategy, if you are everywhere, your clients will see you! If you
+                  target the Romanian Market, this might be the service you need, we constantly optimise our street
+                  advertising locations, to always have the most cost-effective results. Is it worth it to be seen by
+                  hungered of thousands of people on a monthly basis? Short answer, it depends. It depends on where you
+                  are located in the market, the question still remains… What does your business need to grow?
                   <br />
                   <span className={styles.bold}>What does your business need to grow? </span>
                 </div>

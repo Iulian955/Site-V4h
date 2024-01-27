@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className={styles.footerSections}>
           <div className={styles.footerSectionOne}>
-            <div className={styles.footerTitle}>Let’s do it together!</div>
+            <div className={styles.footerTitleMain}>Let’s do it together!</div>
             <div className={styles.footerSubTitle}>Tell us a few words about your project</div>
             <div className={styles.sectionBtn}>
               <button>Get in touch</button>

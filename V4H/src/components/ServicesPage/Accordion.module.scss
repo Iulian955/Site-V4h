@@ -22,7 +22,7 @@ $myColor: #f26622;
 
   @include media("<tablet") {
     width: 100%;
-    max-height: 1400px;
+    max-height: 1500px;
   }
   @include media(">=tablet", "<desktop") {
     width: 100%;
