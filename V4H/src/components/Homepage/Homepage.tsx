@@ -13,6 +13,16 @@ const Homepage = () => {
           Nature needs water for Growth <span className={styles.orange}>Your Business </span> need sustainable growth
           solutions
         </div>
+
+        <div className={styles.mainSubTitle}>
+          {" "}
+          At viral4hype we offer services that grow your business, each day we optimise them to get more results with no
+          waste in resources. Cost effective!
+        </div>
+
+        <div className={styles.homeBtn}>
+          <button>Schedule a meeting with us</button>
+        </div>
       </div>
       {/* <div className={styles.logosContainer}>
         <img src={images.homepage.accenture} alt="accenture" />
@@ -148,6 +158,7 @@ const Homepage = () => {
               </div>
             </div>
 
+            <div className={styles.interLine}></div>
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
                 <button>Step 2</button>
@@ -162,7 +173,7 @@ const Homepage = () => {
                 </div>
               </div>
             </div>
-
+            <div className={styles.interLine}></div>
             <div className={styles.stepsWrapper}>
               <div className={styles.stepBtn}>
                 <button>Step 3</button>
@@ -190,7 +201,7 @@ const Homepage = () => {
             <div className={styles.subscribeInput}>
               <input placeholder="Email" />
             </div>
-            <div className={styles.sectionBtn}>
+            <div className={styles.sectionBtnNew}>
               <button>Get in touch</button>
             </div>
           </div>

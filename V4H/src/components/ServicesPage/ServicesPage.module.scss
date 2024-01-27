@@ -5,6 +5,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap");
 
 $myFont: "IBM Plex Sans";
 $myColor: #f26622;
@@ -32,9 +34,10 @@ $myColor: #f26622;
   flex-direction: column;
   gap: 1rem;
   padding: 5rem 8rem;
+  align-items: flex-start;
   justify-content: center;
   @include media("<tablet") {
-    height: 500px;
+    height: 700px;
     padding: 5rem 4rem;
     align-items: center;
   }
@@ -46,6 +49,7 @@ $myColor: #f26622;
 }
 
 .sectionBtn {
+  padding: 2rem 0;
   button {
     border: none;
     font-family: $myFont;
@@ -162,7 +166,7 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: white;
-  padding: 5em 6em;
+  padding: 5em 12%;
 
   @include media("<tablet") {
     padding: 3em;
@@ -193,7 +197,7 @@ $myColor: #f26622;
 }
 
 .svsText {
-  background-color: #eeedec;
+  background: radial-gradient(circle at center, rgba(242, 102, 34, 0.15) 1%, rgba(238, 237, 236, 1) 60%);
   padding: 2rem;
   height: 100%;
   border-radius: 10px;
@@ -321,7 +325,7 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: #f8f8f8;
-  padding: 5em 6em;
+  padding: 5em 12%;
 
   @include media("<tablet") {
     padding: 3em;
@@ -333,7 +337,7 @@ $myColor: #f26622;
 
 .svsBigTitle {
   font-family: $myFont;
-  font-size: 55px;
+  font-size: 48px;
   font-weight: 600;
   line-height: 62px;
   letter-spacing: 0em;
@@ -396,7 +400,7 @@ $myColor: #f26622;
   }
 }
 
-.cardText {
+.cardText2 {
   font-family: $myFont;
   font-size: 16px;
   font-weight: 400;
@@ -419,7 +423,7 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: white;
-  padding: 5em 6em;
+  padding: 5em 12%;
 
   @include media("<tablet") {
     padding: 3em;
@@ -434,6 +438,9 @@ $myColor: #f26622;
   height: 100%;
   background-color: #eeedec;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .stepsWrapper {
@@ -525,7 +532,7 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: rgba(248, 248, 248, 1);
-  padding: 5em 6em;
+  padding: 5em 12%;
 
   @include media("<tablet") {
     padding: 3em;
@@ -562,15 +569,15 @@ $myColor: #f26622;
 }
 
 .frameworkLogo {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   @include media("<tablet") {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
   @include media(">=tablet", "<desktop") {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -578,7 +585,7 @@ $myColor: #f26622;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 1);
-  padding: 5em 6em;
+  padding: 5em 12%;
 
   @include media("<tablet") {
     padding: 4em;
@@ -593,26 +600,29 @@ $myColor: #f26622;
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 
   @include media("<tablet") {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   @include media(">=tablet", "<desktop") {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
 .cardX {
-  background-color: rgba(251, 250, 250, 1);
+  background: radial-gradient(circle at center, rgba(242, 102, 34, 0.15) 1%, rgba(251, 250, 250, 1) 60%);
   padding: 2%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 4%;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardX > :last-child {
+  margin-top: auto;
 }
 
 .headCard {
@@ -679,7 +689,7 @@ $myColor: #f26622;
   background-color: rgba(248, 248, 248, 1);
   width: 100%;
   height: 100%;
-  padding: 7% 8%;
+  padding: 7% 12%;
 }
 
 .subscribeContainer {
@@ -696,18 +706,19 @@ $myColor: #f26622;
   text-align: center;
   color: rgba(73, 69, 67, 1);
   @include media("<tablet") {
-    font-size: 40px;
+    font-size: 22px;
+    line-height: 55px;
   }
   @include media(">=tablet", "<desktop") {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 
 .subscribeSubTitle {
-  color: #86827e;
+  color: rgba(73, 69, 67, 1);
   font-family: $myFont;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: center;
@@ -720,6 +731,7 @@ $myColor: #f26622;
 }
 .subscribeInput {
   width: 250px;
+  padding: 2rem 0;
   input {
     width: 100%;
     border: 2px solid #cdc9c7;
@@ -773,5 +785,37 @@ $myColor: #f26622;
     @include media(">=tablet", "<desktop") {
       width: 100%;
     }
+  }
+}
+
+.white {
+  color: white;
+}
+
+.svsSmallTitle {
+  padding: 1rem;
+  color: rgba(73, 69, 67, 1);
+  font-family: $myFont;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.interLine {
+  width: 60px;
+  height: 2px;
+  rotate: 270deg;
+  background: linear-gradient(270deg, #ffffff -2.81%, #f39b70 44.72%, #f26622 100.89%);
+  margin-left: 7%;
+  // margin-top: -1rem;
+
+  @include media("<tablet") {
+    margin-top: 0rem;
+    margin-left: 10%;
+  }
+  @include media(">=tablet", "<desktop") {
+    margin-top: 0rem;
   }
 }

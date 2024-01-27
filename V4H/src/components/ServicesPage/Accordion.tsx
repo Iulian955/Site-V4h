@@ -7,21 +7,16 @@ import { FaHandshakeAngle } from "react-icons/fa6";
 
 interface cardBoardProps {
   theQuestion: QuestionData;
-  onClick: () => void;
 }
 interface QuestionData {
   question: string;
   answer: React.ReactNode;
 }
-const Accordion = ({ theQuestion, onClick }: cardBoardProps) => {
+const Accordion = ({ theQuestion }: cardBoardProps) => {
   const [cardboardOpen, setCardOn] = useState<boolean>(false);
-  useEffect(() => {
-    setCardOn(false);
-  }, []);
   const clickHandler = () => {
     setCardOn(!cardboardOpen);
     ReactGA.event(`user_FAQ_clickedQuestion_${theQuestion.question.substring(0, 16)}`);
-    onClick();
   };
 
   return (

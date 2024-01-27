@@ -30,7 +30,8 @@ const images = {
     map: require("./../media/assets/pics/advertising/map.jpg").default,
     mail: require("./../media/assets/pics/advertising/mail.svg").default,
     phone: require("./../media/assets/pics/advertising/phone.svg").default,
-    location2: require("./../media/assets/pics/advertising/location2.svg").default
+    location2: require("./../media/assets/pics/advertising/location2.svg").default,
+    bg44: require("./../media/assets/pics/advertising/bg44.png").default
   },
 
   marketing: {

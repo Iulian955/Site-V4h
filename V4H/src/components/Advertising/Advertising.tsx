@@ -49,7 +49,7 @@ const Advertising = () => {
             </div>
           </div>
           <div className={styles.advertisingPhoto}>
-            <img src={images.advertising.bg1} alt="/" />
+            <img src={images.advertising.bg44} alt="/" />
           </div>
         </div>
         <div className={styles.advertisingSecondSection}>
@@ -303,7 +303,7 @@ const Advertising = () => {
               <div className={styles.subscribeInput}>
                 <input placeholder="Email" />
               </div>
-              <div className={styles.sectionBtn}>
+              <div className={styles.sectionBtnNew}>
                 <button>Get in touch</button>
               </div>
             </div>
