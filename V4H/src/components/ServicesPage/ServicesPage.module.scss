@@ -62,6 +62,9 @@ $myColor: #f26622;
     color: white;
     border-radius: 5px;
     padding: 0.5rem 1rem;
+    @include media("<tablet") {
+      font-size: 14px;
+    }
   }
 }
 
@@ -85,7 +88,7 @@ $myColor: #f26622;
 }
 
 .servicesSubTitle {
-  width: 50%;
+  width: 100%;
   color: white;
   font-family: $myFont;
   font-size: 16px;
@@ -140,6 +143,7 @@ $myColor: #f26622;
 
   @include media("<tablet") {
     font-size: 20px;
+    line-height: 30px;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 38px;
@@ -169,7 +173,7 @@ $myColor: #f26622;
   padding: 5em 12%;
 
   @include media("<tablet") {
-    padding: 3em;
+    padding: 2em;
   }
   @include media(">=tablet", "<desktop") {
     padding: 3em;
@@ -241,15 +245,22 @@ $myColor: #f26622;
 }
 
 .servicesContent ul {
+  // list-style-image: url("../../media/assets/pics/marketing/bullet.svg");
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: flex-start;
+  // list-style-position: inside !important;
+  text-align: center !important;
+  align-items: center !important;
+  align-self: center !important;
   padding: 1.5rem 1rem;
   @include media("<tablet") {
     grid-template-columns: 1fr;
+    padding: 0;
   }
   @include media(">=tablet", "<desktop") {
     grid-template-columns: 1fr;
+    padding: 0;
   }
 }
 
@@ -287,7 +298,10 @@ $myColor: #f26622;
 }
 
 .servicesContent ul li {
-  list-style-image: url("../../media/assets/pics/marketing/bullet.svg");
+  // list-style-image: url("../../media/assets/pics/marketing/bullet.svg");
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0;
   text-align: left;
   @include media("<tablet") {
@@ -295,6 +309,9 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
   }
 }
 
@@ -349,6 +366,10 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 44px;
+  }
+  @include media("<phone") {
+    font-size: 22px;
+    line-height: 50px;
   }
 }
 
@@ -452,6 +473,7 @@ $myColor: #f26622;
   @include media("<tablet") {
     flex-direction: column;
     gap: 1.5rem;
+    padding: 2rem 1rem;
   }
   @include media(">=tablet", "<desktop") {
     flex-direction: column;
@@ -510,6 +532,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 20px;
   }
+  @include media("<phone") {
+    font-size: 16px;
+  }
 }
 
 .stepSubTitle {
@@ -525,6 +550,9 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
   }
 }
 
@@ -568,7 +596,7 @@ $myColor: #f26622;
   }
 }
 
-.frameworkLogo {
+.frameworkLogo > * {
   width: 70px;
   height: 70px;
   @include media("<tablet") {
@@ -588,7 +616,7 @@ $myColor: #f26622;
   padding: 5em 12%;
 
   @include media("<tablet") {
-    padding: 4em;
+    padding: 3em;
   }
   @include media(">=tablet", "<desktop") {
     padding: 4em;
@@ -619,6 +647,7 @@ $myColor: #f26622;
   flex-direction: column;
   gap: 1rem;
   padding: 4%;
+  border-radius: 8px;
 }
 
 .cardX > :last-child {
@@ -642,12 +671,15 @@ $myColor: #f26622;
     font-weight: 500;
     line-height: 31px;
     letter-spacing: 0em;
-  }
-  @include media("<tablet") {
-    font-size: 18px;
-  }
-  @include media(">=tablet", "<desktop") {
-    font-size: 20px;
+    @include media("<tablet") {
+      font-size: 18px;
+    }
+    @include media(">=tablet", "<desktop") {
+      font-size: 20px;
+    }
+    @include media("<phone") {
+      font-size: 14px;
+    }
   }
 }
 
@@ -664,6 +696,9 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 16px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
   }
 }
 
@@ -682,6 +717,15 @@ $myColor: #f26622;
     line-height: 21px;
     letter-spacing: 0em;
     color: #494543;
+    @include media("<tablet") {
+      font-size: 14px;
+    }
+    @include media(">=tablet", "<desktop") {
+      font-size: 16px;
+    }
+    @include media("<phone") {
+      font-size: 10px;
+    }
   }
 }
 
@@ -699,7 +743,7 @@ $myColor: #f26622;
 }
 .subscribeTitle {
   font-family: $myFont;
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 600;
   line-height: 62px;
   letter-spacing: 0em;
@@ -707,10 +751,15 @@ $myColor: #f26622;
   color: rgba(73, 69, 67, 1);
   @include media("<tablet") {
     font-size: 22px;
-    line-height: 55px;
+    line-height: 25px;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 36px;
+    line-height: 45px;
+  }
+  @include media("<tablet") {
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 
@@ -751,17 +800,16 @@ $myColor: #f26622;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
   gap: 2rem;
   @include media("<tablet") {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
     align-items: normal;
   }
   @include media(">=tablet", "<desktop") {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
     align-items: normal;
   }
 }
@@ -801,6 +849,9 @@ $myColor: #f26622;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: center;
+  @include media("<tablet") {
+    font-size: 14px;
+  }
 }
 
 .interLine {
@@ -813,9 +864,90 @@ $myColor: #f26622;
 
   @include media("<tablet") {
     margin-top: 0rem;
-    margin-left: 10%;
+    margin-left: 5%;
   }
   @include media(">=tablet", "<desktop") {
     margin-top: 0rem;
   }
+}
+
+.btnSteps {
+  text-align: center;
+  padding: 4em 0;
+  button {
+    border: none;
+    font-family: $myFont;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #f26622;
+    color: white;
+    border-radius: 5px;
+    padding: 0.7rem 2rem;
+    @include media("<tablet") {
+      font-size: 14px;
+      width: 100%;
+    }
+    @include media(">=tablet", "<desktop") {
+      width: 100%;
+    }
+  }
+}
+
+.subscribeMessage {
+  font-family: $myFont;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f26622;
+  text-align: center;
+  animation: fadeIn 1s forwards;
+}
+
+.messageHide {
+  animation: fadeOut 1s forwards;
+}
+
+.errorMessage {
+  text-align: center;
+  font-family: $myFont;
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+  margin-top: 8px;
+  @include media("<tablet") {
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+.inputError {
+  border: 1px solid red !important;
+  color: red !important;
+
+  &::placeholder {
+    color: red;
+    font-family: $myFont;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.subscribeNone {
+  display: none;
+}
+
+.fullWidthBtn {
+  text-align: center;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.subscribeInput {
+  transition: opacity 0.5s ease;
+}
+
+.sectionBtn {
+  transition: width 0.5s ease;
 }

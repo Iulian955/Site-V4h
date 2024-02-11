@@ -1,15 +1,42 @@
 import React, { useState } from "react";
 import styles from "../ServicesPage/ServicesPage.module.scss";
-import images from "../../data/images";
 import Accordion from "./Accordion";
 import { uniqueId } from "lodash";
 import { FaReact, FaNode, FaJava, FaPython } from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
 import { FaCss3 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
+import digital from "../../media/assets/pics/homepage/digital.svg";
+import street from "../../media/assets/pics/homepage/street.svg";
+import it from "../../media/assets/pics/homepage/it.svg";
+import mindset from "../../media/assets/pics/servicesPage/mind.svg";
+import communication from "../../media/assets/pics/servicesPage/comunication.svg";
+import quality from "../../media/assets/pics/servicesPage/quality.svg";
+import time from "../../media/assets/pics/servicesPage/time.svg";
+import dot from "../../media/assets/pics/marketing/bullet.svg";
 
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState("Web development");
+  const [email, setEmail] = useState("");
+  const [inputError, setInputError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.trim() === "") {
+      setInputError(true);
+      setErrorMessage("");
+    } else if (!emailRegex.test(email)) {
+      setInputError(true);
+      setErrorMessage("Invalid email format.");
+    } else {
+      setInputError(false);
+      setErrorMessage("");
+      setIsSubscribed(true);
+    }
+  };
 
   let contentDiv;
 
@@ -17,88 +44,97 @@ const ServicesPage = () => {
     <div className={styles.servicesContent}>
       <div className={styles.svsMainTitle}>Web development services</div>
       <div className={styles.svsSmallText}>
-        If we are talking about websites most of the time, we develop in REACT. If you prefer another framework we can
-        adapt, our specialists have enough experience to provide services on any kind of front end or back-end
-        frameworks. <br /> <br />
-        If we are talking about other web application, we can build you any of the following: CRM, ERP, SaaS, Analytics
-        Tool, Internal Dashboards. These are just some examples of what we can do.
-        <br /> <br /> Here are the benefits of working with us on a web application
+        We use REACT in our Web development projects. This will ensure that you will have a high-end digital asset that
+        will produce value for your brand. One of the best options you can find out there. <br /> <br />
+        Having a website/platform developed using REACT means: <br /> <br />
       </div>
       <ul>
-        <li>More cashflow for your business</li>
-        <li>Time saved for your priorities</li>
-        <li>Solutions Aligned with Your Vision`</li>
-        <li>Exceptional Experience for Your Visitors</li>
-        <li>Become Unique in your industry</li>
-        <li>Cost effective solutions for your budget</li>
-        <li>Flexibility for future growth</li>
-        <li>Peace of mind</li>
+        <li>
+          <img src={dot} alt="" /> More cashflow for your business
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" /> Become Unique in your industry
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" /> Time saved for your priorities
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" /> Cost effective solutions for your budget
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Solutions Aligned with Your Vision
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Flexibility for future growth
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Exceptional Experience for Your Visitors
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Peace of mind
+        </li>
       </ul>
     </div>
   );
 
   let contentDiv2 = (
     <div className={styles.servicesContent}>
-      <div className={styles.svsMainTitle}>Business digitization</div>
+      <div className={styles.svsMainTitle}>BUSINESS DIGITIZATION SERVICES </div>
       <div className={styles.svsSmallText}>
-        Our expertise lies in catalyzing the transformation of conventional businesses into digitally optimized
-        entities, leveraging a myriad of solutions. Whether you're transitioning to a digital framework or seeking to
-        enhance your existing digital infrastructure, our comprehensive suite of services ensures a seamless journey.
+        Traditional software is expensive and hard to build for many companies. We came forward with a solution:
+        web-based digitization solutions. Be it a digital archive, a document generator that will automate work or
+        anything else your business might need, we can develop it for you.
         <br />
         <br />
-        We specialize in:
-      </div>
-      <ul className={styles.flexUL}>
-        <li>Enterprise-wide digital strategy formulation</li>
-        <li>Implementing and integrating CRM (Customer Relationship Management) systems</li>
-        <li>Customized ERP (Enterprise Resource Planning) solutions tailored to your operations</li>
-        <li>Designing and deploying SaaS (Software as a Service) platforms</li>
-        <li>Developing Analytics Tools for data-driven insights</li>
-        <li>Creating Internal Dashboards for streamlined operations</li>
-      </ul>
-
-      <div className={styles.svsSmallText}>
-        {" "}
-        The advantages of partnering with us for your digital transformation journey encompass: <br />
-      </div>
-      <ul className={styles.flexUL}>
-        <li>Amplified cash flow through optimized digital operations</li>
-        <li>Time efficiencies aligned with your business priorities</li>
-        <li>Solutions crafted to resonate with your long-term vision and goals</li>
-        <li>Exceptional experiences for your customers and stakeholders</li>
-        <li>Establishing a unique digital footprint within your industry</li>
-        <li>Cost-effective digital strategies curated for your specific budget</li>
-        <li>Scalability and adaptability for sustained growth</li>
-        <li>A sense of confidence and assurance throughout the transformation process</li>
-      </ul>
-    </div>
-  );
-
-  let contentDiv3 = (
-    <div className={styles.servicesContent}>
-      <div className={styles.svsMainTitle}>Automation and testing services</div>
-      <div className={styles.svsSmallText}>
-        Within your business there are parts in systems that take up too many resources, maybe it’s time, maybe it’s
-        money, maybe it’s energy. <br />
-        By systems we mean both digital existing systems of your workflow or departments, maybe the sales department
-        takes too much time to find qualified leads, we can help with that, maybe your CRM has too many steps that need
-        to be manually taken, we can help with that too.
-        <br />
-        The point is within these services, we take a look at your business, se what can be automate, we test it, then
-        we automate it, without disrupting your workflow.
-        <br />
-        The benefits of working with us on testing and automation:
-        <br />
+        The benefits of choosing a web-based digitization solution:
       </div>
       <ul>
-        <li>Reliable Product Quality</li>
-        <li>Faster Time-to-Market</li>
-        <li>Enhanced User Satisfaction</li>
-        <li>Consistent Performance</li>
-        <li>Reduced Errors and Risks</li>
-        <li>Greater Productivity</li>
-        <li>Cost-Efficient Solutions</li>
-        <li>Innovative, Reliable Products</li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Cheaper than traditional software
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Flexible to change
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Cost-effective
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Faster to develop
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Secured
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Cloud based
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Not expensive to maintain
+        </li>
       </ul>
     </div>
   );
@@ -112,88 +148,97 @@ const ServicesPage = () => {
       <div className={styles.servicesContent}>
         <div className={styles.svsMainTitle}>Web development services</div>
         <div className={styles.svsSmallText}>
-          If we are talking about websites most of the time, we develop in REACT. If you prefer another framework we can
-          adapt, our specialists have enough experience to provide services on any kind of front end or back-end
-          frameworks. <br /> <br />
-          If we are talking about other web application, we can build you any of the following: CRM, ERP, SaaS,
-          Analytics Tool, Internal Dashboards. These are just some examples of what we can do.
-          <br /> <br /> Here are the benefits of working with us on a web application
+          We use REACT in our Web development projects. This will ensure that you will have a high-end digital asset
+          that will produce value for your brand. One of the best options you can find out there. <br /> <br />
+          Having a website/platform developed using REACT means: <br /> <br />
         </div>
         <ul>
-          <li>More cashflow for your business</li>
-          <li>Time saved for your priorities</li>
-          <li>Solutions Aligned with Your Vision`</li>
-          <li>Exceptional Experience for Your Visitors</li>
-          <li>Become Unique in your industry</li>
-          <li>Cost effective solutions for your budget</li>
-          <li>Flexibility for future growth</li>
-          <li>Peace of mind</li>
+          <li>
+            <img src={dot} alt="" /> More cashflow for your business
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" /> Become Unique in your industry
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" /> Time saved for your priorities
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" /> Cost effective solutions for your budget
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Solutions Aligned with Your Vision
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Flexibility for future growth
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Exceptional Experience for Your Visitors
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Peace of mind
+          </li>
         </ul>
       </div>
     );
-  } else if (selectedService === "Digital transformation services") {
+  } else if (selectedService === "Digitalization services") {
     contentDiv = (
       <div className={styles.servicesContent}>
-        <div className={styles.svsMainTitle}>Business digitization</div>
+        <div className={styles.svsMainTitle}>BUSINESS DIGITIZATION SERVICES </div>
         <div className={styles.svsSmallText}>
-          Our expertise lies in catalyzing the transformation of conventional businesses into digitally optimized
-          entities, leveraging a myriad of solutions. Whether you're transitioning to a digital framework or seeking to
-          enhance your existing digital infrastructure, our comprehensive suite of services ensures a seamless journey.
+          Traditional software is expensive and hard to build for many companies. We came forward with a solution:
+          web-based digitization solutions. Be it a digital archive, a document generator that will automate work or
+          anything else your business might need, we can develop it for you.
           <br />
           <br />
-          We specialize in:
-        </div>
-        <ul className={styles.flexUL}>
-          <li>Enterprise-wide digital strategy formulation</li>
-          <li>Implementing and integrating CRM (Customer Relationship Management) systems</li>
-          <li>Customized ERP (Enterprise Resource Planning) solutions tailored to your operations</li>
-          <li>Designing and deploying SaaS (Software as a Service) platforms</li>
-          <li>Developing Analytics Tools for data-driven insights</li>
-          <li>Creating Internal Dashboards for streamlined operations</li>
-        </ul>
-
-        <div className={styles.svsSmallText}>
-          {" "}
-          The advantages of partnering with us for your digital transformation journey encompass: <br />
-        </div>
-        <ul className={styles.flexUL}>
-          <li>Amplified cash flow through optimized digital operations</li>
-          <li>Time efficiencies aligned with your business priorities</li>
-          <li>Solutions crafted to resonate with your long-term vision and goals</li>
-          <li>Exceptional experiences for your customers and stakeholders</li>
-          <li>Establishing a unique digital footprint within your industry</li>
-          <li>Cost-effective digital strategies curated for your specific budget</li>
-          <li>Scalability and adaptability for sustained growth</li>
-          <li>A sense of confidence and assurance throughout the transformation process</li>
-        </ul>
-      </div>
-    );
-  } else if (selectedService === "Automations and testing") {
-    contentDiv = (
-      <div className={styles.servicesContent}>
-        <div className={styles.svsMainTitle}>Automation and testing services</div>
-        <div className={styles.svsSmallText}>
-          Within your business there are parts in systems that take up too many resources, maybe it’s time, maybe it’s
-          money, maybe it’s energy. <br />
-          By systems we mean both digital existing systems of your workflow or departments, maybe the sales department
-          takes too much time to find qualified leads, we can help with that, maybe your CRM has too many steps that
-          need to be manually taken, we can help with that too.
-          <br />
-          The point is within these services, we take a look at your business, se what can be automate, we test it, then
-          we automate it, without disrupting your workflow.
-          <br />
-          The benefits of working with us on testing and automation:
-          <br />
+          The benefits of choosing a web-based digitization solution:
         </div>
         <ul>
-          <li>Reliable Product Quality</li>
-          <li>Faster Time-to-Market</li>
-          <li>Enhanced User Satisfaction</li>
-          <li>Consistent Performance</li>
-          <li>Reduced Errors and Risks</li>
-          <li>Greater Productivity</li>
-          <li>Cost-Efficient Solutions</li>
-          <li>Innovative, Reliable Products</li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Cheaper than traditional software
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Flexible to change
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Cost-effective
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Faster to develop
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Secured
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Cloud based
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Not expensive to maintain
+          </li>
         </ul>
       </div>
     );
@@ -203,11 +248,10 @@ const ServicesPage = () => {
       <div className={styles.servicesWrapper}>
         <div className={styles.servicesFirstSection}>
           <div className={styles.servicesMainTitle}>
-            Information <span className={styles.white}>and</span> Technology
+            <span className={styles.white}> Information and Technology </span>
           </div>
           <div className={styles.servicesSubTitle}>
-            We use the latest technology to grow your business, protect your data and make your information visible for
-            your targeted audience
+            We use the latest technology in our projects, ensuring automation and sustainable growth for your brand
           </div>
           <div className={styles.sectionBtn}>
             <button>Have a meeting with us</button>
@@ -236,18 +280,10 @@ const ServicesPage = () => {
                 Web development
               </div>
               <div
-                onClick={() => handleServiceClick("Digital transformation services")}
-                className={
-                  selectedService === "Digital transformation services" ? styles.activeSVS : styles.inactiveSVS
-                }
+                onClick={() => handleServiceClick("Digitalization services")}
+                className={selectedService === "Digitalization services" ? styles.activeSVS : styles.inactiveSVS}
               >
-                Digital transformation services
-              </div>
-              <div
-                onClick={() => handleServiceClick("Automations and testing")}
-                className={selectedService === "Automations and testing" ? styles.activeSVS : styles.inactiveSVS}
-              >
-                Automations and testing
+                Digitalization services
               </div>
             </div>
 
@@ -263,10 +299,6 @@ const ServicesPage = () => {
                   key={uniqueId()}
                   theQuestion={{ question: "Digital transformation services", answer: contentDiv2 }}
                 />
-                <Accordion
-                  key={uniqueId()}
-                  theQuestion={{ question: "Automations and testing", answer: contentDiv3 }}
-                />
               </div>
             </div>
           </div>
@@ -274,13 +306,13 @@ const ServicesPage = () => {
 
         <div className={styles.servicesThirdSection}>
           <div className={styles.svsBigTitle}>
-            Sustainable growth solutions means that we provide the most value with the least amount of recourses wasted
+            Sustainable growth solutions means that we provide the most value out of your budget
           </div>
           <div className={styles.svsSmallTitle}>What you can expect</div>
           <div className={styles.svsCards}>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.services.mind} />
+                <img src={mindset} />
               </div>
               <div className={styles.cardTitle}>Business Mindset</div>
 
@@ -291,37 +323,32 @@ const ServicesPage = () => {
             </div>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.services.comunication} />
+                <img src={communication} />
               </div>
               <div className={styles.cardTitle}>On point communication</div>
 
-              <div className={styles.cardText2}>
-                We won’t bother you more than we need to, we talk everything we need to at the beginning, then just
-                follow up if we need your approval for a decision, we prioritise your time
-              </div>
+              <div className={styles.cardText2}>We like to communicate in an organized and time efficient manner.</div>
             </div>
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.services.quality} />
+                <img src={quality} />
               </div>
               <div className={styles.cardTitle}>Competitive quality</div>
 
               <div className={styles.cardText2}>
-                We always strive to deliver the best quality, we are not competitive with the marketing but with
-                ourselves, after all you are your best competitor.
+                We always strive to deliver the best quality. We constantly challenge ourselves to deliver in time and
+                satisfy expectations
               </div>
             </div>
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.services.time} />
+                <img src={time} />
               </div>
               <div className={styles.cardTitle}>Time efficiency</div>
 
-              <div className={styles.cardText2}>
-                When we tell you a date we respect it, no delays, no hiccups, only professionalism
-              </div>
+              <div className={styles.cardText2}>We create realistic deadlines and respect them.</div>
             </div>
           </div>
         </div>
@@ -331,7 +358,7 @@ const ServicesPage = () => {
             <button>PROCESS</button>
           </div>
           <div className={styles.titleContainer}>
-            <div className={styles.mainTitle}>Want us to treat your digital needs?</div>
+            <div className={styles.mainTitle}>Interested in what we offer?</div>
             <div className={styles.subTitle}>Here are the steps</div>
           </div>{" "}
           <div className={styles.stepsContainer}>
@@ -343,7 +370,8 @@ const ServicesPage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Consultation</div>
                 <div className={styles.stepSubTitle}>
-                  Have a discussion with you about your needs during a introductory call
+                  We organize an introductory call where we will gather all the data needed in order to come up with a
+                  solution.
                 </div>
               </div>
             </div>
@@ -357,8 +385,7 @@ const ServicesPage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Analysis and planning</div>
                 <div className={styles.stepSubTitle}>
-                  we analyse our first call see if your needs are in accordance with your wants and then create a
-                  sustainable plan proposal for your business
+                  We will analyse your needs and come up with an initial development plan, estimated budget & deadline.
                 </div>
               </div>
             </div>
@@ -372,11 +399,15 @@ const ServicesPage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Final Call</div>
                 <div className={styles.stepSubTitle}>
-                  We set up another call with you to tell you what your opportunities are, how they can be put into
-                  action and decide if we can work together to achieve your vision.
+                  We will present our first hand plan and estimated budget & deadline. If our proposal is what your
+                  company needs we will start working on final details and then start building the best solution for
+                  your business.
                 </div>
               </div>
             </div>
+          </div>
+          <div className={styles.btnSteps}>
+            <button>Book a call</button>
           </div>
         </div>
 
@@ -384,37 +415,51 @@ const ServicesPage = () => {
           <div className={styles.svsBigTitle}>Frameworks and programming languages we love</div>
           <div className={styles.programming}>
             <div className={styles.frameworks}>
-              <FaReact className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <FaReact />
+              </div>
               <div className={styles.frameworkTitle}>React</div>
             </div>
 
             <div className={styles.frameworks}>
-              <FaNode className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <FaNode />
+              </div>
               <div className={styles.frameworkTitle}>Nodejs</div>
             </div>
 
             <div className={styles.frameworks}>
-              <IoLogoFirebase className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <IoLogoFirebase />{" "}
+              </div>
               <div className={styles.frameworkTitle}>Firebase</div>
             </div>
 
             <div className={styles.frameworks}>
-              <FaCss3 className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <FaCss3 />
+              </div>
               <div className={styles.frameworkTitle}>CSS</div>
             </div>
 
             <div className={styles.frameworks}>
-              <FaJava className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <FaJava />{" "}
+              </div>
               <div className={styles.frameworkTitle}>Java</div>
             </div>
 
             <div className={styles.frameworks}>
-              <IoLogoJavascript className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <IoLogoJavascript />{" "}
+              </div>
               <div className={styles.frameworkTitle}>JavaScript</div>
             </div>
 
             <div className={styles.frameworks}>
-              <FaPython className={styles.frameworkLogo} />
+              <div className={styles.frameworkLogo}>
+                <FaPython />{" "}
+              </div>
               <div className={styles.frameworkTitle}>Python</div>
             </div>
           </div>
@@ -432,37 +477,36 @@ const ServicesPage = () => {
             <div className={styles.cards}>
               <div className={styles.cardX}>
                 <div className={styles.headCard}>
-                  <img src={images.homepage.digital} alt="digital" />
+                  <img src={digital} alt="digital" />
                   <div>Digital marketing</div>
                 </div>
                 <div className={styles.cardText}>
                   We get to know your business, your audience, then we tailor a solution based on the opportunities you
-                  have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing,
+                  have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing and
                   branding for our clients, but the question remains…
                   <br />
                   <span className={styles.bold}>What does your business need to grow? </span>
                 </div>
                 <div className={styles.cardLink}>
-                  <a href="/"> Schedule a meeting with us! </a>
+                  <a href="/marketing"> See details </a>
                 </div>
               </div>
               <div className={styles.cardX}>
                 <div className={styles.headCard}>
-                  <img src={images.homepage.street} alt="digital" />
-                  <div>Street advertising</div>
+                  <img src={street} alt="street" />
+                  <div>Outdoor advertising</div>
                 </div>
                 <div className={styles.cardText}>
-                  What do you do while you are in traffic? Well... most people look around. The best marketing strategy
-                  will always be an omnichannel strategy, if you are everywhere, your clients will see you! If you
-                  target the Romanian Market, this might be the service you need, we constantly optimise our street
-                  advertising locations, to always have the most cost-effective results. Is it worth it to be seen by
-                  hungered of thousands of people on a monthly basis? Short answer, it depends. It depends on where you
-                  are located in the market, the question still remains… What does your business need to grow?
+                  Outdoor advertising spots on digital screens all over Romania. If you target the Romanian Market, this
+                  might be the service you need, we offer diverse locations that will fit your goals. Be it a mall, the
+                  metro or a screen in a high traffic intersection. Is it worth being seen by millions of people on a
+                  monthly basis? Short answer, yes it is. We will help you choose the best locations for your brand.
+                  <br /> The question still remains…
                   <br />
                   <span className={styles.bold}>What does your business need to grow? </span>
                 </div>
                 <div className={styles.cardLink}>
-                  <a href="/"> Schedule a meeting with us! </a>
+                  <a href="/advertising"> See details </a>
                 </div>
               </div>
             </div>
@@ -476,11 +520,20 @@ const ServicesPage = () => {
             </div>
             <div className={styles.subscribeSubTitle}>Don’t miss out on our newsletter</div>
             <div className={styles.subscribeFlex}>
-              <div className={styles.subscribeInput}>
-                <input placeholder="Email" />
+              <div className={isSubscribed ? styles.subscribeNone : styles.subscribeInput}>
+                <input
+                  placeholder={inputError ? "Email invalid or required" : "Email"}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={inputError ? styles.inputError : ""}
+                  onInput={() => setInputError(false)}
+                />{" "}
+                {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
               </div>
-              <div className={styles.sectionBtnNew}>
-                <button>Get in touch</button>
+              <div className={styles.sectionBtn}>
+                <button onClick={isSubscribed ? undefined : handleSubscribe}>
+                  {isSubscribed ? "Thank you for subscribing!" : "Subscribe"}
+                </button>
               </div>
             </div>
           </div>

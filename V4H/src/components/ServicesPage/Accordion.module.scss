@@ -49,7 +49,7 @@ $myColor: #f26622;
 .questionText {
   line-height: 24px;
   font-family: $myFont;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0;
   text-align: start;
   margin-right: 45px;
@@ -64,11 +64,20 @@ $myColor: #f26622;
   height: 64px;
   margin-top: 2px;
   p {
+    font-size: 14px;
     font-weight: 700;
   }
   @include media("<tablet") {
     p {
       font-size: 14px;
+      font-weight: 700;
+      line-height: 13px;
+    }
+  }
+  @include media("<phone") {
+    p {
+      font-size: 10px;
+      font-weight: 700;
       line-height: 13px;
     }
   }

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../Navbar/Navbar.module.scss";
-import images from "../../data/images";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
+import logo from "../../media/assets/picturesV4H/newLogo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className={styles.headerContainer}>
         <HashLink className={styles.logoDiv} to="/">
-          <img src={images.homepage.logoAlb} alt="/" />
+          <img src={logo} alt="/" />
         </HashLink>
 
         <nav className={isMenuOpen ? styles.responsiveNavbar : " "}>
@@ -40,12 +40,13 @@ const Navbar = () => {
               <a href="/marketing">Digital Marketing</a>
             </li>
             <li>
-              <a href="/advertising">Street Advertising</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
+              <a href="/advertising">Outdoor Advertising</a>
             </li>
           </ul>
+
+          <div className={styles.sectionNav}>
+            <button>Get in touch</button>
+          </div>
         </nav>
 
         {isMenuOpen ? (

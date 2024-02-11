@@ -55,9 +55,11 @@ $myColor: #f26622;
   text-align: left;
   @include media("<tablet") {
     font-size: 30px;
+    line-height: 30px;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 44px;
+    line-height: 50px;
   }
 }
 
@@ -71,10 +73,10 @@ $myColor: #f26622;
   text-align: left;
   padding: 2% 0;
   @include media("<tablet") {
-    font-size: 10px;
+    font-size: 12px;
   }
   @include media(">=tablet", "<desktop") {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -176,6 +178,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 30px;
   }
+  @include media("<phone") {
+    font-size: 22px;
+  }
 }
 
 .marketingClients .client div:nth-child(2) {
@@ -191,6 +196,9 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
   }
 }
 
@@ -233,7 +241,8 @@ $myColor: #f26622;
     line-height: 18px;
     letter-spacing: 0em;
     text-align: center;
-    background: linear-gradient(black, black) padding-box, linear-gradient(180deg, #e34913 0%, #b913e3 100%) border-box;
+    background: linear-gradient(rgba(13, 13, 12, 1), rgba(13, 13, 12, 1)) padding-box,
+      linear-gradient(180deg, #e34913 0%, #b913e3 100%) border-box;
     border: 2px solid transparent;
     display: inline-block;
     border-radius: 5px;
@@ -256,6 +265,7 @@ $myColor: #f26622;
   padding-bottom: 0;
 
   @include media("<tablet") {
+    line-height: 30px;
     font-size: 20px;
   }
   @include media(">=tablet", "<desktop") {
@@ -274,6 +284,7 @@ $myColor: #f26622;
   padding-bottom: 0;
 
   @include media("<tablet") {
+    line-height: 26px;
     font-size: 20px;
   }
   @include media(">=tablet", "<desktop") {
@@ -312,6 +323,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
   }
+  @include media("<phone") {
+    font-size: 10px;
+  }
 }
 
 .marketingSecondSection {
@@ -321,7 +335,7 @@ $myColor: #f26622;
   padding: 10em 12%;
 
   @include media("<tablet") {
-    padding: 3em;
+    padding: 2em;
   }
   @include media(">=tablet", "<desktop") {
     padding: 3em;
@@ -407,6 +421,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 22px;
   }
+  @include media("<phone") {
+    font-size: 18px;
+  }
 }
 
 .servicesSmallText {
@@ -423,6 +440,32 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
   }
+  @include media("<phone") {
+    font-size: 10px;
+  }
+}
+.cardsFAQ {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @include media("<tablet") {
+    grid-template-columns: 100%;
+    gap: 0;
+    padding: 0;
+  }
+  @include media(">=tablet", "<desktop") {
+    grid-template-columns: 100%;
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
 }
 
 .servicesContent ul {
@@ -432,6 +475,7 @@ $myColor: #f26622;
   padding: 1.5rem 1rem;
   @include media("<tablet") {
     grid-template-columns: 1fr;
+    padding: 0;
   }
   @include media(">=tablet", "<desktop") {
     grid-template-columns: 1fr;
@@ -439,9 +483,20 @@ $myColor: #f26622;
 }
 
 .servicesContent ul li {
-  list-style-image: url("../../media/assets/pics/marketing/bullet.svg");
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0;
   text-align: left;
+  @include media("<tablet") {
+    font-size: 10px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 12px;
+  }
+  @include media("<phone") {
+    font-size: 8px;
+  }
 }
 
 .judeteResponsive {
@@ -461,7 +516,7 @@ $myColor: #f26622;
   padding: 10em 12%;
 
   @include media("<tablet") {
-    padding: 3em;
+    padding: 2em;
   }
   @include media(">=tablet", "<desktop") {
     padding: 3em;
@@ -478,9 +533,15 @@ $myColor: #f26622;
   color: #494543;
   @include media("<tablet") {
     font-size: 30px;
+    line-height: 29px;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 44px;
+    line-height: 45px;
+  }
+  @include media("<phone") {
+    font-size: 28px;
+    line-height: 25px;
   }
 }
 
@@ -514,6 +575,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     grid-template-columns: 1fr;
   }
+  @include media("<phone") {
+    padding: 0.5rem;
+  }
 }
 
 .cardTitle {
@@ -546,6 +610,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
   }
+  @include media("<phone") {
+    font-size: 10px;
+  }
 }
 
 .cardText2 {
@@ -561,6 +628,9 @@ $myColor: #f26622;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
   }
 }
 
@@ -633,6 +703,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 20px;
   }
+  @include media("<phone") {
+    font-size: 16px;
+  }
 }
 
 .stepSubTitle {
@@ -649,6 +722,9 @@ $myColor: #f26622;
   @include media(">=tablet", "<desktop") {
     font-size: 14px;
   }
+  @include media("<phone") {
+    font-size: 10px;
+  }
 }
 
 .stepsWrapper {
@@ -660,6 +736,7 @@ $myColor: #f26622;
   @include media("<tablet") {
     flex-direction: column;
     gap: 1.5rem;
+    padding: 2rem 1rem;
   }
   @include media(">=tablet", "<desktop") {
     flex-direction: column;
@@ -680,7 +757,7 @@ $myColor: #f26622;
   padding: 10em 12%;
 
   @include media("<tablet") {
-    padding: 4em;
+    padding: 3em;
   }
   @include media(">=tablet", "<desktop") {
     padding: 4em;
@@ -723,6 +800,7 @@ $myColor: #f26622;
   gap: 1rem;
   padding: 4%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .cardX2 > :last-child {
@@ -773,12 +851,15 @@ $myColor: #f26622;
     line-height: 31px;
     letter-spacing: 0em;
     color: white;
-  }
-  @include media("<tablet") {
-    font-size: 18px;
-  }
-  @include media(">=tablet", "<desktop") {
-    font-size: 20px;
+    @include media("<tablet") {
+      font-size: 18px;
+    }
+    @include media(">=tablet", "<desktop") {
+      font-size: 20px;
+    }
+    @include media("<phone") {
+      font-size: 14px;
+    }
   }
 }
 
@@ -831,6 +912,12 @@ $myColor: #f26622;
     line-height: 21px;
     letter-spacing: 0em;
     color: white;
+    @include media("<tablet") {
+      font-size: 12px;
+    }
+    @include media(">=tablet", "<desktop") {
+      font-size: 14px;
+    }
   }
 }
 
@@ -856,10 +943,16 @@ $myColor: #f26622;
   text-align: center;
   color: rgba(73, 69, 67, 1);
   @include media("<tablet") {
-    font-size: 40px;
+    font-size: 35px;
+    line-height: 29px;
   }
   @include media(">=tablet", "<desktop") {
     font-size: 44px;
+    line-height: 45px;
+  }
+  @include media("<phone") {
+    font-size: 28px;
+    line-height: 25px;
   }
 }
 
@@ -907,8 +1000,35 @@ $myColor: #f26622;
     color: white;
     border-radius: 5px;
     padding: 0.5rem 1rem;
+    transition: width 0.5s ease;
     @include media("<tablet") {
       width: 100%;
+      font-size: 14px;
+    }
+    @include media(">=tablet", "<desktop") {
+      width: 100%;
+    }
+  }
+}
+
+.btnSteps {
+  text-align: center;
+  padding: 4em 0;
+  button {
+    border: none;
+    font-family: $myFont;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #f26622;
+    color: white;
+    border-radius: 5px;
+    padding: 0.7rem 2rem;
+    @include media("<tablet") {
+      width: 100%;
+      font-size: 14px;
     }
     @include media(">=tablet", "<desktop") {
       width: 100%;
@@ -920,8 +1040,7 @@ $myColor: #f26622;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
   gap: 2rem;
   @include media("<tablet") {
     flex-direction: column;
@@ -944,9 +1063,83 @@ $myColor: #f26622;
 
   @include media("<tablet") {
     margin-top: 0rem;
-    margin-left: 10%;
+    margin-left: 5%;
   }
   @include media(">=tablet", "<desktop") {
     margin-top: 0rem;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.subscribeMessage {
+  font-family: $myFont;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f26622;
+  text-align: center;
+  animation: fadeIn 1s forwards;
+}
+
+.messageHide {
+  animation: fadeOut 1s forwards;
+}
+
+.errorMessage {
+  text-align: center;
+  font-family: $myFont;
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+  margin-top: 8px;
+  @include media("<tablet") {
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+.inputError {
+  border: 1px solid red !important;
+  color: red !important;
+
+  &::placeholder {
+    color: red;
+    font-family: $myFont;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.fullWidthBtn {
+  text-align: center;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.subscribeInput {
+  transition: opacity 0.5s ease;
+}
+
+.sectionBtn {
+  transition: width 0.5s ease;
+}
+
+.subscribeNone {
+  display: none;
 }

@@ -3,6 +3,7 @@
 @import "./data/themes.scss";
 /* responsive declarations*/
 $breakpoints: (
+  phone: 320px,
   tablet: 576px,
   desktop: 992px
 );

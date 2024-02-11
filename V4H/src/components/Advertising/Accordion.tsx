@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { uniqueId } from "lodash";
 import ReactGA from "react-ga4";
 import styles from "./Accordion.module.scss";
-import images from "../../data/images";
 import { FaHandshakeAngle } from "react-icons/fa6";
 
 interface cardBoardProps {
@@ -27,9 +26,9 @@ const Accordion = ({ theQuestion }: cardBoardProps) => {
         </div>
         <div className={styles.detailsPadder}>
           {cardboardOpen ? (
-            <img className={styles.pinkArrowDown} src={images.homepage.plus} />
+            <img className={styles.pinkArrowDown} src="../../media/assets/picturesV4H/plus.png" />
           ) : (
-            <img className={styles.pinkArrowDown} src={images.homepage.plus} />
+            <img className={styles.pinkArrowDown} src="../../media/assets/picturesV4H/plus.png" />
           )}
         </div>
       </div>

@@ -155,6 +155,8 @@ $myColor: #f26622;
   color: #fefefe;
   list-style-type: none;
   text-align: left;
+  text-decoration: none !important;
+  border: none !important;
   @include media("<tablet") {
     font-size: 12px;
   }
@@ -181,6 +183,7 @@ $myColor: #f26622;
   color: #fefefe;
   list-style-type: none;
   text-align: left;
+  border: none !important;
   @include media("<tablet") {
     font-size: 12px;
   }

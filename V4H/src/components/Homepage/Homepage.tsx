@@ -1,11 +1,40 @@
 import React, { useState } from "react";
 import styles from "../Homepage/Homepage.module.scss";
-import images from "../../data/images";
 import { Q } from "./string.json";
 import Accordion from "./Accordion";
 import { uniqueId } from "lodash";
+import digital from "../../media/assets/pics/homepage/digital.svg";
+import street from "../../media/assets/pics/homepage/street.svg";
+import it from "../../media/assets/pics/homepage/it.svg";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const [email, setEmail] = useState("");
+  const [inputError, setInputError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.trim() === "") {
+      setInputError(true);
+      setErrorMessage("");
+    } else if (!emailRegex.test(email)) {
+      setInputError(true);
+      setErrorMessage("Invalid email format.");
+    } else {
+      setInputError(false);
+      setErrorMessage("");
+      setIsSubscribed(true);
+    }
+  };
+
+  let navigate = useNavigate();
+
+  function navigateCalendly() {
+    navigate("/calendly");
+  }
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.firstContainer}>
@@ -16,8 +45,8 @@ const Homepage = () => {
 
         <div className={styles.mainSubTitle}>
           {" "}
-          At viral4hype we offer services that grow your business, each day we optimise them to get more results with no
-          waste in resources. Cost effective!
+          At Viral 4 Hype we offer growth oriented services, We work on optimization daily so that no resources go to
+          waste.
         </div>
 
         <div className={styles.homeBtn}>
@@ -39,9 +68,8 @@ const Homepage = () => {
         <div className={styles.titleContainer}>
           <div className={styles.mainTitle}>How can we help your business?</div>
           <div className={styles.subTitle}>
-            We want people to connect with your business, your brand, your products! Your business has resources, we
-            specialise in offering the most cost-effective solutions that are specially tailored for your place in the
-            market. We make you visible but we also save you time.
+            We don’t like to be called an agency. We are both a consulting and services company. Our main focus is on
+            sustainable growth, real value and scaling the brands we work with. See below our main areas of focus.
           </div>
         </div>
 
@@ -49,50 +77,53 @@ const Homepage = () => {
           <div className={styles.cards}>
             <div className={styles.cardX}>
               <div className={styles.headCard}>
-                <img src={images.homepage.digital} alt="digital" />
+                <img src={digital} alt="digital" />
                 <div>Digital marketing</div>
               </div>
               <div className={styles.cardText}>
                 We get to know your business, your audience, then we tailor a solution based on the opportunities you
-                have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing,
+                have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing and
                 branding for our clients, but the question remains…
                 <br />
                 <span className={styles.bold}>What does your business need to grow? </span>
               </div>
               <div className={styles.cardLink}>
-                <a href="/"> Schedule a meeting with us! </a>
+                <a href="/marketing"> See details </a>
               </div>
             </div>
             <div className={styles.cardX}>
               <div className={styles.headCard}>
-                <img src={images.homepage.digital} alt="digital" />
-                <div>Digital marketing</div>
+                <img src={it} alt="it" />
+                <div>IT services</div>
               </div>
               <div className={styles.cardText}>
-                We get to know your business, your audience, then we tailor a solution based on the opportunities you
-                have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing,
-                branding for our clients, but the question remains…
+                We stated earlier that we save you time, in our first meeting we will analyse your business, then we can
+                propose the best solutions for your business. After that we code it! Websites, web-based software
+                solutions are just two examples of custom solutions we can offer you. <br />
+                The question still remains…
                 <br />
                 <span className={styles.bold}>What does your business need to grow? </span>
               </div>
               <div className={styles.cardLink}>
-                <a href="/"> Schedule a meeting with us! </a>
+                <a href="/services"> See details </a>
               </div>
             </div>
 
             <div className={styles.cardX}>
               <div className={styles.headCard}>
-                <img src={images.homepage.digital} alt="digital" />
-                <div>Digital marketing</div>
+                <img src={street} alt="street" />
+                <div>Outdoor advertising</div>
               </div>
               <div className={styles.cardText}>
-                We get to know your business, your audience, then we tailor a solution based on the opportunities you
-                have in the market that will provide you with results. We do PPC, SEO, SEM, Social Media Marketing,
-                branding for our clients, but the question remains…
+                Outdoor advertising spots on digital screens all over Romania. If you target the Romanian Market, this
+                might be the service you need, we offer diverse locations that will fit your goals. Be it a mall, the
+                metro or a screen in a high traffic intersection. Is it worth being seen by millions of people on a
+                monthly basis? Short answer, yes it is. We will help you choose the best locations for your brand.
+                <br /> The question still remains…
                 <br /> <span className={styles.bold}>What does your business need to grow? </span>
               </div>
               <div className={styles.cardLink}>
-                <a href="/"> Schedule a meeting with us! </a>
+                <a href="/advertising"> See details </a>
               </div>
             </div>
           </div>
@@ -109,15 +140,15 @@ const Homepage = () => {
               We’ve covered what we considered sustainable growth solutions for business, now let’s talk about what we
               mean when we say exclusive. <br />
               <br />
-              We carefully select our clients, there are strong seeds and there are weak seeds, we can offer a healthy
-              environment for seeds to grow, but a weak seed, can only grow so much. <br />
+              We carefully select our projects and clients. We focus on both already developed companies that need help
+              in scaling and start-ups which are just starting. We seek long-term partnerships that will ensure
+              sustainability and stability. <br />
               <br />
-              The difference between seeds and business is that business can change, so if we wont work with you now, we
-              will tell you why so you can try again in the future. We work with open-minded businesses that take risks
-              to grow and that understand the importance of hard work and planning.
+              As we are not the ordinary agency we don’t focus on quantity but the quality of our clients. This will
+              ensure that all our partners will receive all the attention they need.
             </div>
             <div className={styles.sectionBtn}>
-              <button>Get in touch</button>
+              <button>Let’s talk about your business</button>
             </div>
           </div>
           <div className={styles.secondSection}>
@@ -139,7 +170,7 @@ const Homepage = () => {
           </div>
           <div className={styles.titleContainer}>
             <div className={styles.mainTitle}>How can you work with us?</div>
-            <div className={styles.subTitle}>The process</div>
+            {/* <div className={styles.subTitle}>The process</div> */}
           </div>
 
           <div className={styles.stepsContainer}>
@@ -151,9 +182,7 @@ const Homepage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Have a meeting with us</div>
                 <div className={styles.stepSubTitle}>
-                  In this meeting we will answer any relevant question you have about us, our strategy, our results, we
-                  will also ask you many relevant questions to understand you, your business, your goals and your
-                  objectives{" "}
+                  In this meeting we will get to know each other and analyse the way we can help your business grow.
                 </div>
               </div>
             </div>
@@ -167,9 +196,8 @@ const Homepage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>Analysis and planning phase</div>
                 <div className={styles.stepSubTitle}>
-                  During this step we will analyse if you can work with us, what opportunities there are in the market
-                  for you, if your goals are feasible or need to be recalibrated. During this phase we will also plan an
-                  initial proposal with an overview of the most sustainable solutions that will grow your business
+                  After collecting all the data we need we will start analysing the best options for your business and
+                  prepare our proposal to you.
                 </div>
               </div>
             </div>
@@ -182,11 +210,15 @@ const Homepage = () => {
               <div className={styles.stepTexts}>
                 <div className={styles.stepTitle}>NDA and GO!</div>
                 <div className={styles.stepSubTitle}>
-                  During this phase, we will set up another meeting with you, sign an NDA, offer our solution, after you
-                  analyse and accept the proposal, we will start working on making people see you, want you, love you
+                  During this phase we will sign an NDA, present our proposal and if both parties decide we can move
+                  forward together we will go on with preparing the last details and start working on growing your
+                  business.
                 </div>
               </div>
             </div>
+          </div>
+          <div className={styles.btnSteps}>
+            <button>Book a call</button>
           </div>
         </div>
       </div>
@@ -198,11 +230,20 @@ const Homepage = () => {
             <div className={styles.subscribeTitle}>
               Subscribe to our newsletter, you might win more than just knowledge
             </div>
-            <div className={styles.subscribeInput}>
-              <input placeholder="Email" />
+            <div className={isSubscribed ? styles.subscribeNone : styles.subscribeInput}>
+              <input
+                placeholder={inputError ? "Email invalid or required" : "Email"}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={inputError ? styles.inputError : ""}
+                onInput={() => setInputError(false)}
+              />{" "}
+              {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
             </div>
-            <div className={styles.sectionBtnNew}>
-              <button>Get in touch</button>
+            <div className={styles.sectionBtn}>
+              <button onClick={isSubscribed ? undefined : handleSubscribe}>
+                {isSubscribed ? "Thank you for subscribing!" : "Subscribe"}
+              </button>
             </div>
           </div>
         </div>

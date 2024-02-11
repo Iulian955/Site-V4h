@@ -69,6 +69,13 @@ $myColor: #f26622;
       line-height: 13px;
     }
   }
+
+  @include media("<phone") {
+    p {
+      font-size: 10px;
+      line-height: 13px;
+    }
+  }
 }
 @keyframes slowlyFadeIn {
   from {
