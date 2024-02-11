@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "../Footer/Footer.module.scss";
-import images from "../../data/images";
 import { faLinkedin, faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../../media/assets/picturesV4H/logoAlb.svg";
 
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerWrapper}>
         <div className={styles.footerLogo}>
-          <img src={images.homepage.logoAlb} alt="/" />
+          <img src={logo} alt="/" />
         </div>
         <div className={styles.footerSections}>
           <div className={styles.footerSectionOne}>

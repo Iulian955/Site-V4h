@@ -1,35 +1,92 @@
 import React, { useState } from "react";
 import styles from "../Marketing/Marketing.module.scss";
-import images from "../../data/images";
-import { Q } from "./string.json";
 import Accordion from "./Accordion";
 import { uniqueId } from "lodash";
+import street from "../../media/assets/pics/marketing/street.svg";
+import it from "../../media/assets/pics/marketing/it.svg";
+import marketingPhoto from "../../media/assets/pics/marketing/marketing.jpg";
+import target from "../../media/assets/pics/marketing/target.svg";
+import dataDriven from "../../media/assets/pics/marketing/diagram.svg";
+import creative from "../../media/assets/pics/marketing/creative.svg";
+import collaboration from "../../media/assets/pics/marketing/transparent.svg";
+import dot from "../../media/assets/pics/marketing/bullet.svg";
 
 const Marketing = () => {
-  const [selectedCity, setSelectedCity] = useState("Google Ads Marketing");
+  const [selectedCity, setSelectedCity] = useState("PPC Marketing");
+  const [email, setEmail] = useState("");
+  const [inputError, setInputError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.trim() === "") {
+      setInputError(true);
+      setErrorMessage("");
+    } else if (!emailRegex.test(email)) {
+      setInputError(true);
+      setErrorMessage("Invalid email format.");
+    } else {
+      setInputError(false);
+      setErrorMessage("");
+      setIsSubscribed(true);
+    }
+  };
 
   let contentDiv;
 
   let contentDiv1 = (
     <div className={styles.servicesContent}>
-      <div className={styles.servicesMainTitle}> Google Ads Marketing</div>
+      <div className={styles.servicesMainTitle}>PPC Marketing</div>
       <div className={styles.servicesSmallText}>
-        Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
-        Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
-        deliver tangible results.
+        Our proficiency in PPC Marketing is your key to unlocking sustainable growth. As certified experts in PPC, we
+        leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but deliver tangible
+        results.
         <br />
         <br />
         Benefits :
       </div>
       <ul>
-        <li>Granular Targeting</li>
-        <li>Strategic Keyword Optimization</li>
-        <li>Ad Extensions Mastery</li>
-        <li>Continuous Performance Analysis</li>
-        <li>Responsive and Dynamic Ads</li>
-        <li>Conversion Tracking Expertise</li>
-        <li>Competitive Analysis</li>
-        <li>Adaptive Budget Management</li>
+        <li>
+          <img src={dot} alt="" />
+          Granular Targeting
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Responsive and Dynamic Ads
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Strategic Keyword Optimization
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Conversion Tracking Expertise
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Constant reporting
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Competitive Analysis
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Continuous Performance Analysis
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Adaptive Budget Management
+        </li>
       </ul>
     </div>
   );
@@ -38,75 +95,148 @@ const Marketing = () => {
     <div className={styles.servicesContent}>
       <div className={styles.servicesMainTitle}> Social Media Advertising</div>
       <div className={styles.servicesSmallText}>
-        Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
-        Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
-        deliver tangible results.
+        Having a community of people who love your brand and stay loyal to it is important for every business. Achieve
+        this with Social Media Marketing
         <br />
         <br />
         Benefits :
       </div>
       <ul>
-        <li>Granular Targeting</li>
-        <li>Strategic Keyword Optimization</li>
-        <li>Ad Extensions Mastery</li>
-        <li>Continuous Performance Analysis</li>
-        <li>Responsive and Dynamic Ads</li>
-        <li>Conversion Tracking Expertise</li>
-        <li>Competitive Analysis</li>
-        <li>Adaptive Budget Management</li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Adaptive service for your needs
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Communication strategy
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Time saved
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          AI involved
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Video & photo editing
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Video & photo content
+        </li>
       </ul>
     </div>
   );
 
   let contentDiv3 = (
     <div className={styles.servicesContent}>
-      <div className={styles.servicesMainTitle}> SEO</div>
+      <div className={styles.servicesMainTitle}> Search engine optimization services</div>
       <div className={styles.servicesSmallText}>
-        Unlocking the full potential of your online presence through meticulous SEO monitoring, analysis, and audit. Our
-        comprehensive approach ensures your website is primed for maximum visibility and success in search engine
-        rankings. Benefits:
+        Organic traffic has the highest conversion rate. That is why SEO is a top priority for you website/platform.
+        More than the classic methods of doing SEO we introduced data extraction and analysis for your market.
         <br />
         <br />
         Benefits :
       </div>
       <ul>
-        <li>Thorough SEO Monitoring</li>
-        <li>Data-Driven Analysis</li>
-        <li>Comprehensive SEO Audit</li>
-        <li>Strategic Keyword Optimization</li>
-        <li>Competitor Benchmarking</li>
-        <li>Proactive Issue Resolution</li>
-        <li>Transparent Reporting</li>
-        <li>Cutting-Edge Tool Integration</li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          More organic traffic
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Higher ranking
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Valuable market insights
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Valuable data about competitors
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Traffic forecast
+        </li>
+        <li>
+          {" "}
+          <img src={dot} alt="" />
+          Monthly reporting
+        </li>
       </ul>
     </div>
   );
 
-  const handleCityClick = (city) => {
+  const handleCityClick = (city: React.SetStateAction<string>) => {
     setSelectedCity(city);
   };
 
-  if (selectedCity === "Google Ads Marketing") {
+  if (selectedCity === "PPC Marketing") {
     contentDiv = (
       <div className={styles.servicesContent}>
-        <div className={styles.servicesMainTitle}> Google Ads Marketing</div>
+        <div className={styles.servicesMainTitle}>PPC Marketing</div>
         <div className={styles.servicesSmallText}>
-          Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
-          Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
-          deliver tangible results.
+          Our proficiency in PPC Marketing is your key to unlocking sustainable growth. As certified experts in PPC, we
+          leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but deliver
+          tangible results.
           <br />
           <br />
           Benefits :
         </div>
         <ul>
-          <li>Granular Targeting</li>
-          <li>Strategic Keyword Optimization</li>
-          <li>Ad Extensions Mastery</li>
-          <li>Continuous Performance Analysis</li>
-          <li>Responsive and Dynamic Ads</li>
-          <li>Conversion Tracking Expertise</li>
-          <li>Competitive Analysis</li>
-          <li>Adaptive Budget Management</li>
+          <li>
+            <img src={dot} alt="" />
+            Granular Targeting
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Responsive and Dynamic Ads
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Strategic Keyword Optimization
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Conversion Tracking Expertise
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Constant reporting
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Competitive Analysis
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Continuous Performance Analysis
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Adaptive Budget Management
+          </li>
         </ul>
       </div>
     );
@@ -115,46 +245,88 @@ const Marketing = () => {
       <div className={styles.servicesContent}>
         <div className={styles.servicesMainTitle}> Social Media Advertising</div>
         <div className={styles.servicesSmallText}>
-          Our proficiency in Google Ads Marketing is your key to unlocking unparalleled success. As certified experts in
-          Google Ads, we leverage cutting-edge tools and methodologies to engineer campaigns that not only stand out but
-          deliver tangible results.
+          Having a community of people who love your brand and stay loyal to it is important for every business. Achieve
+          this with Social Media Marketing
           <br />
           <br />
           Benefits :
         </div>
         <ul>
-          <li>Granular Targeting</li>
-          <li>Strategic Keyword Optimization</li>
-          <li>Ad Extensions Mastery</li>
-          <li>Continuous Performance Analysis</li>
-          <li>Responsive and Dynamic Ads</li>
-          <li>Conversion Tracking Expertise</li>
-          <li>Competitive Analysis</li>
-          <li>Adaptive Budget Management</li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Adaptive service for your needs
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Communication strategy
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Time saved
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            AI involved
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Video & photo editing
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Video & photo content
+          </li>
         </ul>
       </div>
     );
   } else if (selectedCity === "SEO") {
     contentDiv = (
       <div className={styles.servicesContent}>
-        <div className={styles.servicesMainTitle}> SEO</div>
+        <div className={styles.servicesMainTitle}> Search engine optimization services</div>
         <div className={styles.servicesSmallText}>
-          Unlocking the full potential of your online presence through meticulous SEO monitoring, analysis, and audit.
-          Our comprehensive approach ensures your website is primed for maximum visibility and success in search engine
-          rankings. Benefits:
+          Organic traffic has the highest conversion rate. That is why SEO is a top priority for you website/platform.
+          More than the classic methods of doing SEO we introduced data extraction and analysis for your market.
           <br />
           <br />
           Benefits :
         </div>
         <ul>
-          <li>Thorough SEO Monitoring</li>
-          <li>Data-Driven Analysis</li>
-          <li>Comprehensive SEO Audit</li>
-          <li>Strategic Keyword Optimization</li>
-          <li>Competitor Benchmarking</li>
-          <li>Proactive Issue Resolution</li>
-          <li>Transparent Reporting</li>
-          <li>Cutting-Edge Tool Integration</li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            More organic traffic
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Higher ranking
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Valuable market insights
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Valuable data about competitors
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Traffic forecast
+          </li>
+          <li>
+            {" "}
+            <img src={dot} alt="" />
+            Monthly reporting
+          </li>
         </ul>
       </div>
     );
@@ -180,14 +352,14 @@ const Marketing = () => {
                 <div>Clients</div>
               </div>
               <div className={styles.client}>
-                <div>250 +</div>
-                <div>Monthly Revenue Generated</div>{" "}
+                <div>5 +</div>
+                <div>Years of activity</div>{" "}
               </div>
             </div>
           </div>
 
           <div className={styles.marketingPhoto}>
-            <img src={images.marketing.marketing} alt="marketing" />
+            <img src={marketingPhoto} alt="marketing" />
           </div>
         </div>
 
@@ -202,10 +374,10 @@ const Marketing = () => {
           <div className={styles.judeteContainer}>
             <div className={styles.judetName}>
               <div
-                onClick={() => handleCityClick("Google Ads Marketing")}
-                className={selectedCity === "Google Ads Marketing" ? styles.activeCity : styles.inactiveCity}
+                onClick={() => handleCityClick("PPC Marketing")}
+                className={selectedCity === "PPC Marketing" ? styles.activeCity : styles.inactiveCity}
               >
-                Google Ads Marketing
+                PPC Marketing
               </div>
               <div
                 onClick={() => handleCityClick("Social Media Marketing")}
@@ -227,7 +399,7 @@ const Marketing = () => {
           <div className={styles.judeteResponsive}>
             <div className={styles.cardsFAQ}>
               <div className={styles.cardsWrapper}>
-                <Accordion key={uniqueId()} theQuestion={{ question: "Google Ads Marketing", answer: contentDiv1 }} />
+                <Accordion key={uniqueId()} theQuestion={{ question: "PPC Marketing", answer: contentDiv1 }} />
                 <Accordion key={uniqueId()} theQuestion={{ question: "Social Media Marketing", answer: contentDiv2 }} />
                 <Accordion key={uniqueId()} theQuestion={{ question: "SEO", answer: contentDiv3 }} />
               </div>
@@ -240,7 +412,7 @@ const Marketing = () => {
           <div className={styles.marketingCards}>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.marketing.target} />
+                <img src={target} />
               </div>
               <div className={styles.cardTitle}>Targeted Precision</div>
 
@@ -252,7 +424,7 @@ const Marketing = () => {
             </div>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.marketing.diagram} />
+                <img src={dataDriven} />
               </div>
               <div className={styles.cardTitle}>Data-Driven Insights</div>
 
@@ -265,7 +437,7 @@ const Marketing = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.marketing.creative} />
+                <img src={creative} />
               </div>
               <div className={styles.cardTitle}>Creative Innovation</div>
 
@@ -278,7 +450,7 @@ const Marketing = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={images.marketing.transparent} />
+                <img src={collaboration} />
               </div>
               <div className={styles.cardTitle}>Transparent Collaboration</div>
 
@@ -339,6 +511,9 @@ const Marketing = () => {
               </div>
             </div>
           </div>
+          <div className={styles.btnSteps}>
+            <button>Book a call</button>
+          </div>
         </div>
 
         <div className={styles.marketingFifthSection}>
@@ -354,39 +529,40 @@ const Marketing = () => {
             <div className={styles.cards}>
               <div className={styles.cardX2}>
                 <div className={styles.headCard2}>
-                  <img src={images.marketing.it} alt="it" />
+                  <img src={it} alt="it" />
                   <div>IT Services</div>
                 </div>
                 <div className={styles.cardText2}>
-                  We stated earlier that we save you time, in our first meeting, we have the opportunity to understand
-                  you and your business, then we can offer you the possibility to enhance your customers journey on your
-                  website, to automate workflows within your business that take up too much of your resources: money,
-                  time and energy. After that we code it! Websites, software solutions, we can do it, the question still
-                  remains… What does your business need to grow?
+                  Outdoor advertising spots on digital screens all over Romania. If you target the Romanian Market, this
+                  might be the service you need, we offer diverse locations that will fit your goals. Be it a mall, the
+                  metro or a screen in a high traffic intersection. Is it worth being seen by millions of people on a
+                  monthly basis? Short answer, yes it is. <br />
+                  We will help you choose the best locations for your brand.
+                  <br /> The question still remains…
                   <br />
                   <span className={styles.bold2}>What does your business need to grow? </span>
                 </div>
                 <div className={styles.cardLink2}>
-                  <a href="/"> Learn More </a>
+                  <a href="/services"> See details </a>
                 </div>
               </div>
               <div className={styles.cardX2}>
                 <div className={styles.headCard2}>
-                  <img src={images.marketing.street} alt="street" />
-                  <div>Street advertising</div>
+                  <img src={street} alt="street" />
+                  <div>Outdoor advertising</div>
                 </div>
                 <div className={styles.cardText2}>
-                  What do you do while you are in traffic? Well... most people look around. The best marketing strategy
-                  will always be an omnichannel strategy, if you are everywhere, your clients will see you! If you
-                  target the Romanian Market, this might be the service you need, we constantly optimise our street
-                  advertising locations, to always have the most cost-effective results. Is it worth it to be seen by
-                  hungered of thousands of people on a monthly basis? Short answer, it depends. It depends on where you
-                  are located in the market, the question still remains… What does your business need to grow?
+                  Outdoor advertising spots on digital screens all over Romania. If you target the Romanian Market, this
+                  might be the service you need, we offer diverse locations that will fit your goals. Be it a mall, the
+                  metro or a screen in a high traffic intersection. Is it worth being seen by millions of people on a
+                  monthly basis? Short answer, yes it is.
+                  <br /> We will help you choose the best locations for your brand.
+                  <br /> The question still remains…
                   <br />
                   <span className={styles.bold2}>What does your business need to grow? </span>
                 </div>
                 <div className={styles.cardLink2}>
-                  <a href="/"> Learn More </a>
+                  <a href="/advertising"> See details </a>
                 </div>
               </div>
             </div>
@@ -398,11 +574,20 @@ const Marketing = () => {
             <div className={styles.subscribeTitle}>Digital marketing secrets</div>
             <div className={styles.subscribeSubTitle}>Learn more, Subscribe to our newsletter</div>
             <div className={styles.subscribeFlex}>
-              <div className={styles.subscribeInput}>
-                <input placeholder="Email" />
+              <div className={isSubscribed ? styles.subscribeNone : styles.subscribeInput}>
+                <input
+                  placeholder={inputError ? "Email invalid or required" : "Email"}
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  className={inputError ? styles.inputError : ""}
+                  onInput={() => setInputError(false)}
+                />{" "}
+                {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
               </div>
               <div className={styles.sectionBtn}>
-                <button>Get in touch</button>
+                <button onClick={isSubscribed ? undefined : handleSubscribe}>
+                  {isSubscribed ? "Thank you for subscribing!" : "Subscribe"}
+                </button>
               </div>
             </div>
           </div>

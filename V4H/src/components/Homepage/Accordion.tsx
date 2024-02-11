@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { uniqueId } from "lodash";
 import ReactGA from "react-ga4";
 import styles from "./Accordion.module.scss";
-import images from "../../data/images";
 import { FaHandshakeAngle } from "react-icons/fa6";
+import plus from "../../media/assets/pics/homepage/plus.svg";
+import minus from "../../media/assets/pics/homepage/minus.svg";
 
 interface cardBoardProps {
   theQuestion: QuestionData;
@@ -23,14 +24,16 @@ const Accordion = ({ theQuestion }: cardBoardProps) => {
     <div onClick={clickHandler} className={cardboardOpen ? styles.questionCard : styles.collapsed}>
       <div className={styles.primaryLine}>
         <div className={styles.questionIcon}>
-          <FaHandshakeAngle className={cardboardOpen ? styles.handshakeWhite : styles.handshakeOrange} />
+          <div className={cardboardOpen ? styles.handshakeWhite : styles.handshakeOrange}>
+            <FaHandshakeAngle />
+          </div>
           <p className={cardboardOpen ? styles.orange : styles.questionText}>{theQuestion.question}</p>
         </div>
         <div className={styles.detailsPadder}>
           {cardboardOpen ? (
-            <img className={styles.pinkArrowDown} src={images.homepage.minus} />
+            <img className={styles.pinkArrowDown} src={minus} />
           ) : (
-            <img className={styles.pinkArrowDown} src={images.homepage.plus} />
+            <img className={styles.pinkArrowDown} src={plus} />
           )}
         </div>
       </div>
