@@ -14,12 +14,13 @@ import map from "../../media/assets/pics/advertising/newMap.svg";
 import phone from "../../media/assets/pics/advertising/phone.svg";
 import mail from "../../media/assets/pics/advertising/mail.svg";
 import visitUs from "../../media/assets/pics/advertising/location2.svg";
+import { Helmet } from "react-helmet";
 
 const Advertising = () => {
   const [selectedCity, setSelectedCity] = useState("Bucharest");
   const [judetTitle, setJudetTitle] = useState("Bucharest");
   const [judetInfo, setJudetInfo] = useState(
-    "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest.",
+    "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest."
   );
 
   const handleCityClick = (city: React.SetStateAction<string>) => {
@@ -28,7 +29,7 @@ const Advertising = () => {
     if (city === "Bucharest") {
       setJudetTitle("Bucharest");
       setJudetInfo(
-        "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest.",
+        "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest."
       );
     } else if (city === "Sibiu") {
       setJudetTitle("Sibiu");
@@ -36,7 +37,7 @@ const Advertising = () => {
     } else if (city === "Constanta") {
       setJudetTitle("Constanta");
       setJudetInfo(
-        "Nestled within the bustling cityscape of Constanta, our three premier advertising spaces command attention with a daily viewership exceeding 300,000. Strategically positioned to capture the flow of over 300,000 individuals traversing these locations each day, these advertising spaces offer a prime opportunity for your brand to make a lasting impression. Leverage these high-traffic zones to maximize visibility.",
+        "Nestled within the bustling cityscape of Constanta, our three premier advertising spaces command attention with a daily viewership exceeding 300,000. Strategically positioned to capture the flow of over 300,000 individuals traversing these locations each day, these advertising spaces offer a prime opportunity for your brand to make a lasting impression. Leverage these high-traffic zones to maximize visibility."
       );
     }
   };
@@ -44,7 +45,7 @@ const Advertising = () => {
   React.useEffect(() => {
     setJudetTitle("Bucharest");
     setJudetInfo(
-      "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest.",
+      "Strategically positioned across three prime locations in Bucharest, our outdoor advertising spaces offer visibility and targeted exposure. With a combined weekly reach of 520,000 individuals, these high-traffic areas ensure maximum engagement and impact for your advertising campaigns. Capitalize on these prime locations to effectively connect with your desired audience and amplify brand awareness in the bustling cityscape of Bucharest."
     );
   }, []);
 
@@ -71,16 +72,22 @@ const Advertising = () => {
 
   return (
     <div className={styles.advertisingContainer}>
+      <Helmet>
+        <meta name="description" content="Advertising" />
+      </Helmet>
       <div className={styles.advertisingWrapper}>
         <div className={styles.advertisingFirstSection}>
           <div className={styles.advertisingTexts}>
             <div className={styles.advertisingText}>Captivate the Streets, Amplify Your Brand</div>
             <div className={styles.sectionBtn}>
-              <button>Schedule a meeting with us</button>
+              <a href="https://calendly.com/viral4hype/introductory-call">
+                {" "}
+                <button>Schedule a meeting with us</button>{" "}
+              </a>
             </div>
           </div>
           <div className={styles.advertisingPhoto}>
-            <img src={advBg} alt="/" />
+            <img src={advBg} alt="photoAdv" />
           </div>
         </div>
         {/* <div className={styles.advertisingSecondSection}>
@@ -136,7 +143,7 @@ const Advertising = () => {
             <div className={styles.cardAdv}>
               <div>
                 <div className={styles.cardLogo}>
-                  <img src={traffic} />
+                  <img src={traffic} alt="trafficPhoto" />
                 </div>
                 <div className={styles.cardTitle}>High-Traffic Zones</div>
               </div>
@@ -149,7 +156,7 @@ const Advertising = () => {
             <div className={styles.cardAdv}>
               <div>
                 <div className={styles.cardLogo}>
-                  <img src={visibility} alt="/" />
+                  <img src={visibility} alt="visibilityLogo" />
                 </div>
                 <div className={styles.cardTitle}>Prime Visibility</div>
               </div>
@@ -162,7 +169,7 @@ const Advertising = () => {
             <div className={styles.cardAdv}>
               <div>
                 <div className={styles.cardLogo}>
-                  <img src={location} alt="/" />
+                  <img src={location} alt="locationLogo" />
                 </div>
                 <div className={styles.cardTitle}>Buzzworthy Environments</div>
               </div>
@@ -176,7 +183,7 @@ const Advertising = () => {
             <div className={styles.cardAdv}>
               <div>
                 <div className={styles.cardLogo}>
-                  <img src={data} alt="/" />
+                  <img src={data} alt="dataLogo" />
                 </div>
                 <div className={styles.cardTitle}>Data-Backed Selection</div>
               </div>
@@ -251,31 +258,31 @@ const Advertising = () => {
             <div className={styles.services}>
               <div>
                 <div className={styles.serviceLogo}>
-                  <img src={phone} alt="/" />
+                  <img src={phone} alt="phoneLogo" />
                 </div>
                 <div className={styles.serviceTitle}>Give us a call</div>
               </div>
-              <div className={styles.serviceText}>+40 753 754 321</div>
+              <div className={styles.serviceText}>0757 173 566</div>
             </div>
 
             <div className={styles.services}>
               <div>
                 <div className={styles.serviceLogo}>
-                  <img src={mail} alt="/" />
+                  <img src={mail} alt="mailLogo" />
                 </div>
                 <div className={styles.serviceTitle}>Write to us</div>
               </div>
-              <div className={styles.serviceText}>email@gmail.com</div>
+              <div className={styles.serviceText}>contact@viral4hype.com</div>
             </div>
 
             <div className={styles.services}>
               <div>
                 <div className={styles.serviceLogo}>
-                  <img src={visitUs} alt="/" />
+                  <img src={visitUs} alt="visitUsLogo" />
                 </div>
                 <div className={styles.serviceTitle}>Visit us</div>
               </div>
-              <div className={styles.serviceText}>email@gmail.com</div>
+              <div className={styles.serviceText}>Bucharest , Romania</div>
             </div>
           </div>
         </div>
@@ -339,7 +346,7 @@ const Advertising = () => {
                 <input
                   placeholder={inputError ? "Email invalid or required" : "Email"}
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   className={inputError ? styles.inputError : ""}
                   onInput={() => setInputError(false)}
                 />{" "}

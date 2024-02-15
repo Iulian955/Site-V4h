@@ -7,6 +7,7 @@ import digital from "../../media/assets/pics/homepage/digital.svg";
 import street from "../../media/assets/pics/homepage/street.svg";
 import it from "../../media/assets/pics/homepage/it.svg";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Homepage = () => {
   const [email, setEmail] = useState("");
@@ -30,16 +31,14 @@ const Homepage = () => {
     }
   };
 
-  let navigate = useNavigate();
-
-  function navigateCalendly() {
-    navigate("/calendly");
-  }
   return (
     <div className={styles.homepageContainer}>
+      <Helmet>
+        <meta name="description" content="Homepage" />
+      </Helmet>
       <div className={styles.firstContainer}>
         <div className={styles.mainText}>
-          Nature needs water for Growth <span className={styles.orange}>Your Business </span> need sustainable growth
+          Nature needs water for Growth <span className={styles.orange}>Your Business </span> needs sustainable growth
           solutions
         </div>
 
@@ -50,7 +49,9 @@ const Homepage = () => {
         </div>
 
         <div className={styles.homeBtn}>
-          <button>Schedule a meeting with us</button>
+          <a href="https://calendly.com/viral4hype/introductory-call">
+            <button>Schedule a meeting with us</button>{" "}
+          </a>
         </div>
       </div>
       {/* <div className={styles.logosContainer}>
@@ -148,7 +149,10 @@ const Homepage = () => {
               ensure that all our partners will receive all the attention they need.
             </div>
             <div className={styles.sectionBtn}>
-              <button>Let’s talk about your business</button>
+              <a href="https://calendly.com/viral4hype/introductory-call">
+                {" "}
+                <button>Let’s talk about your business</button>{" "}
+              </a>
             </div>
           </div>
           <div className={styles.secondSection}>
@@ -218,7 +222,10 @@ const Homepage = () => {
             </div>
           </div>
           <div className={styles.btnSteps}>
-            <button>Book a call</button>
+            <a href="https://calendly.com/viral4hype/introductory-call">
+              {" "}
+              <button>Book a call</button>{" "}
+            </a>
           </div>
         </div>
       </div>

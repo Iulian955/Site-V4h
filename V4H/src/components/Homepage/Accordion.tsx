@@ -31,9 +31,9 @@ const Accordion = ({ theQuestion }: cardBoardProps) => {
         </div>
         <div className={styles.detailsPadder}>
           {cardboardOpen ? (
-            <img className={styles.pinkArrowDown} src={minus} />
+            <img className={styles.pinkArrowDown} src={minus} alt="logo" />
           ) : (
-            <img className={styles.pinkArrowDown} src={plus} />
+            <img className={styles.pinkArrowDown} src={plus} alt="logo" />
           )}
         </div>
       </div>

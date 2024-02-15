@@ -14,6 +14,7 @@ import communication from "../../media/assets/pics/servicesPage/comunication.svg
 import quality from "../../media/assets/pics/servicesPage/quality.svg";
 import time from "../../media/assets/pics/servicesPage/time.svg";
 import dot from "../../media/assets/pics/marketing/bullet.svg";
+import { Helmet } from "react-helmet";
 
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState("Web development");
@@ -50,38 +51,38 @@ const ServicesPage = () => {
       </div>
       <ul>
         <li>
-          <img src={dot} alt="" /> More cashflow for your business
+          <img src={dot} alt="dot" /> More cashflow for your business
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" /> Become Unique in your industry
+          <img src={dot} alt="dot" /> Become Unique in your industry
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" /> Time saved for your priorities
+          <img src={dot} alt="dot" /> Time saved for your priorities
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" /> Cost effective solutions for your budget
+          <img src={dot} alt="dot" /> Cost effective solutions for your budget
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Solutions Aligned with Your Vision
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Flexibility for future growth
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Exceptional Experience for Your Visitors
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Peace of mind
         </li>
       </ul>
@@ -102,37 +103,37 @@ const ServicesPage = () => {
       <ul>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Cheaper than traditional software
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Flexible to change
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Cost-effective
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Faster to develop
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Secured
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Cloud based
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Not expensive to maintain
         </li>
       </ul>
@@ -154,38 +155,38 @@ const ServicesPage = () => {
         </div>
         <ul>
           <li>
-            <img src={dot} alt="" /> More cashflow for your business
+            <img src={dot} alt="dot" /> More cashflow for your business
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" /> Become Unique in your industry
+            <img src={dot} alt="dot" /> Become Unique in your industry
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" /> Time saved for your priorities
+            <img src={dot} alt="dot" /> Time saved for your priorities
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" /> Cost effective solutions for your budget
+            <img src={dot} alt="dot" /> Cost effective solutions for your budget
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Solutions Aligned with Your Vision
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Flexibility for future growth
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Exceptional Experience for Your Visitors
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Peace of mind
           </li>
         </ul>
@@ -206,37 +207,37 @@ const ServicesPage = () => {
         <ul>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Cheaper than traditional software
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Flexible to change
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Cost-effective
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Faster to develop
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Secured
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Cloud based
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Not expensive to maintain
           </li>
         </ul>
@@ -245,6 +246,9 @@ const ServicesPage = () => {
   }
   return (
     <div className={styles.servicesContainer}>
+      <Helmet>
+        <meta name="description" content="Services" />
+      </Helmet>
       <div className={styles.servicesWrapper}>
         <div className={styles.servicesFirstSection}>
           <div className={styles.servicesMainTitle}>
@@ -254,7 +258,10 @@ const ServicesPage = () => {
             We use the latest technology in our projects, ensuring automation and sustainable growth for your brand
           </div>
           <div className={styles.sectionBtn}>
-            <button>Have a meeting with us</button>
+            <a href="https://calendly.com/viral4hype/introductory-call">
+              {" "}
+              <button>Have a meeting with us</button>
+            </a>
           </div>
         </div>
 
@@ -312,7 +319,7 @@ const ServicesPage = () => {
           <div className={styles.svsCards}>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={mindset} />
+                <img src={mindset} alt="mindSetLogo" />
               </div>
               <div className={styles.cardTitle}>Business Mindset</div>
 
@@ -323,7 +330,7 @@ const ServicesPage = () => {
             </div>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={communication} />
+                <img src={communication} alt="communicationLogo" />
               </div>
               <div className={styles.cardTitle}>On point communication</div>
 
@@ -332,7 +339,7 @@ const ServicesPage = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={quality} />
+                <img src={quality} alt="qualityLogo" />
               </div>
               <div className={styles.cardTitle}>Competitive quality</div>
 
@@ -344,7 +351,7 @@ const ServicesPage = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={time} />
+                <img src={time} alt="timeLogo" />
               </div>
               <div className={styles.cardTitle}>Time efficiency</div>
 
@@ -407,7 +414,10 @@ const ServicesPage = () => {
             </div>
           </div>
           <div className={styles.btnSteps}>
-            <button>Book a call</button>
+            <a href="https://calendly.com/viral4hype/introductory-call">
+              {" "}
+              <button>Book a call</button>{" "}
+            </a>
           </div>
         </div>
 

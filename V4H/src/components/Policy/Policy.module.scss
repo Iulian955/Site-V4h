@@ -1,0 +1,72 @@
+@import "./../../main.module.scss";
+@import "./../../data//themes.scss";
+@import url("https://fonts.googleapis.com/css2?family=Martel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap");
+
+$myFont: "IBM Plex Sans";
+$myColor: #f26622;
+
+.cookieContainer {
+  width: 100%;
+  max-width: 100rem;
+  height: 100%;
+  min-height: 100vh;
+  padding: 5em 12%;
+
+  @include media("<tablet") {
+    padding: 3em;
+  }
+  @include media(">=tablet", "<desktop") {
+    padding: 3em;
+  }
+}
+
+.cookieTitle {
+  padding: 3rem 0;
+  font-family: $myFont;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #494543;
+  @include media("<tablet") {
+    font-size: 30px;
+    line-height: 29px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 44px;
+    line-height: 45px;
+  }
+  @include media("<phone") {
+    font-size: 26px;
+    line-height: 25px;
+  }
+}
+
+.cookieText {
+  font-family: $myFont;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #86827e;
+  @include media("<tablet") {
+    font-size: 12px;
+  }
+  @include media(">=tablet", "<desktop") {
+    font-size: 14px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
+  }
+  @include media("<phone") {
+    font-size: 10px;
+  }
+}

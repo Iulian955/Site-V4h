@@ -31,13 +31,13 @@ const CookieConsent = () => {
     <div className={styles.cookiePopper}>
       <div className={styles.textArea}>
         <h4>
-          <img className={styles.cookieIcon} src={images.cookieIcon} />
+          <img className={styles.cookieIcon} />
           {cookieConsent.headTitle}
         </h4>
         <p>
           {cookieConsent.mainText}
           <br />
-          <a target={"_blank"} href="/termeni-si-conditii">
+          <a target={"_blank"} href="/">
             {cookieConsent.secondText}
           </a>
         </p>

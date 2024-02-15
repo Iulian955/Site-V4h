@@ -12,37 +12,40 @@ import ServicesPage from "./components/ServicesPage/ServicesPage";
 import Advertising from "./components/Advertising/Advertising";
 import Marketing from "./components/Marketing/Marketing";
 import Loading from "./components/Loading/Loading";
+import Cookie from "./components/Cookie/Cookie";
+import Terms from "./components/Terms/Terms";
+import Policy from "./components/Policy/Policy";
+import CookieComponent from "./components/CookieComponent/CookieComponent";
 
 function App() {
   useScrollSense(() => {
     ReactGA.event(`User scrolled to bottom on [${window.location.pathname}]`);
   });
 
+  const handleConsentAccepted = () => {
+    console.log("Consent accepted");
+  };
+
+  const handleRejectCookies = () => {
+    console.log("Cookies rejected by user.");
+  };
+
   return (
-    <div className="App">
-      {/* {getCookieConsent() && <CookieConsent />} */}
-      <header className="App-header">
-        <BrowserRouter basename="/">
-          <AuthProvider>
-            <Suspense
-              fallback={
-                <div>
-                  <Loading />
-                </div>
-              }
-            >
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/advertising" element={<Advertising />} />
-                <Route path="/marketing" element={<Marketing />} />
-              </Routes>
-              <Footer />
-            </Suspense>
-          </AuthProvider>
-        </BrowserRouter>
-      </header>
+    <div>
+      <CookieComponent onAccept={handleConsentAccepted} onReject={handleRejectCookies} />
+      <BrowserRouter basename="/">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/advertising" element={<Advertising />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/cookie" element={<Cookie />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/policy" element={<Policy />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

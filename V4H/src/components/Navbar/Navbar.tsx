@@ -4,6 +4,7 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
 import logo from "../../media/assets/picturesV4H/newLogo.png";
+import { Helmet } from "react-helmet";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,14 +19,21 @@ const Navbar = () => {
   return (
     <div
       className={
-        location.pathname === "/advertising" || location.pathname === "/marketing"
+        location.pathname === "/advertising" ||
+        location.pathname === "/marketing" ||
+        location.pathname === "/cookie" ||
+        location.pathname === "/terms" ||
+        location.pathname === "/policy"
           ? styles.advertisingHeader
           : styles.header
       }
     >
+      <Helmet>
+        <meta name="description" content="Navabr" />
+      </Helmet>
       <div className={styles.headerContainer}>
         <HashLink className={styles.logoDiv} to="/">
-          <img src={logo} alt="/" />
+          <img src={logo} alt="logo" />
         </HashLink>
 
         <nav className={isMenuOpen ? styles.responsiveNavbar : " "}>

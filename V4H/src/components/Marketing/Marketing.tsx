@@ -10,6 +10,7 @@ import dataDriven from "../../media/assets/pics/marketing/diagram.svg";
 import creative from "../../media/assets/pics/marketing/creative.svg";
 import collaboration from "../../media/assets/pics/marketing/transparent.svg";
 import dot from "../../media/assets/pics/marketing/bullet.svg";
+import { Helmet } from "react-helmet";
 
 const Marketing = () => {
   const [selectedCity, setSelectedCity] = useState("PPC Marketing");
@@ -49,42 +50,42 @@ const Marketing = () => {
       </div>
       <ul>
         <li>
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Granular Targeting
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Responsive and Dynamic Ads
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Strategic Keyword Optimization
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Conversion Tracking Expertise
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Constant reporting
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Competitive Analysis
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Continuous Performance Analysis
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Adaptive Budget Management
         </li>
       </ul>
@@ -104,32 +105,32 @@ const Marketing = () => {
       <ul>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Adaptive service for your needs
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Communication strategy
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Time saved
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           AI involved
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Video & photo editing
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Video & photo content
         </li>
       </ul>
@@ -149,32 +150,32 @@ const Marketing = () => {
       <ul>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           More organic traffic
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Higher ranking
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Valuable market insights
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Valuable data about competitors
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Traffic forecast
         </li>
         <li>
           {" "}
-          <img src={dot} alt="" />
+          <img src={dot} alt="dot" />
           Monthly reporting
         </li>
       </ul>
@@ -199,42 +200,42 @@ const Marketing = () => {
         </div>
         <ul>
           <li>
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Granular Targeting
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Responsive and Dynamic Ads
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Strategic Keyword Optimization
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Conversion Tracking Expertise
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Constant reporting
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Competitive Analysis
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Continuous Performance Analysis
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Adaptive Budget Management
           </li>
         </ul>
@@ -254,32 +255,32 @@ const Marketing = () => {
         <ul>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Adaptive service for your needs
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Communication strategy
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Time saved
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             AI involved
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Video & photo editing
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Video & photo content
           </li>
         </ul>
@@ -299,32 +300,32 @@ const Marketing = () => {
         <ul>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             More organic traffic
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Higher ranking
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Valuable market insights
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Valuable data about competitors
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Traffic forecast
           </li>
           <li>
             {" "}
-            <img src={dot} alt="" />
+            <img src={dot} alt="dot" />
             Monthly reporting
           </li>
         </ul>
@@ -334,6 +335,9 @@ const Marketing = () => {
 
   return (
     <div className={styles.marketingContainer}>
+      <Helmet>
+        <meta name="description" content="Marketing" />
+      </Helmet>
       <div className={styles.marketingWrapper}>
         <div className={styles.marketingFirstSection}>
           <div className={styles.marketingTexts}>
@@ -343,7 +347,10 @@ const Marketing = () => {
               marketing that goes beyond, delivering tailored strategies for viral success.
             </div>
             <div className={styles.marketingBtn}>
-              <button>Let’s work together</button>
+              <a href="https://calendly.com/viral4hype/introductory-call">
+                {" "}
+                <button>Let’s work together</button>{" "}
+              </a>
             </div>
 
             <div className={styles.marketingClients}>
@@ -412,7 +419,7 @@ const Marketing = () => {
           <div className={styles.marketingCards}>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={target} />
+                <img src={target} alt="targetLogo" />
               </div>
               <div className={styles.cardTitle}>Targeted Precision</div>
 
@@ -424,7 +431,7 @@ const Marketing = () => {
             </div>
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={dataDriven} />
+                <img src={dataDriven} alt="dataLogo" />
               </div>
               <div className={styles.cardTitle}>Data-Driven Insights</div>
 
@@ -437,7 +444,7 @@ const Marketing = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={creative} />
+                <img src={creative} alt="creativeLogo" />
               </div>
               <div className={styles.cardTitle}>Creative Innovation</div>
 
@@ -450,7 +457,7 @@ const Marketing = () => {
 
             <div className={styles.cardAdv}>
               <div className={styles.cardLogo}>
-                <img src={collaboration} />
+                <img src={collaboration} alt="collabLogo" />
               </div>
               <div className={styles.cardTitle}>Transparent Collaboration</div>
 
@@ -512,7 +519,10 @@ const Marketing = () => {
             </div>
           </div>
           <div className={styles.btnSteps}>
-            <button>Book a call</button>
+            <a href="https://calendly.com/viral4hype/introductory-call">
+              {" "}
+              <button>Book a call</button>{" "}
+            </a>
           </div>
         </div>
 
@@ -578,7 +588,7 @@ const Marketing = () => {
                 <input
                   placeholder={inputError ? "Email invalid or required" : "Email"}
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   className={inputError ? styles.inputError : ""}
                   onInput={() => setInputError(false)}
                 />{" "}
